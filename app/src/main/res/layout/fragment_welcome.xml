@@ -7,6 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeFragment">
 
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/roundedbutton"
+        android:padding="100dp"
+        android:scaleType="center"
+        android:src="@drawable/buttonlansia"
+        android:contentDescription="button for elder"
+        android:backgroundTint="#019267"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tagline2"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/tagline2"
         android:layout_width="wrap_content"
@@ -76,11 +95,20 @@
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00C897"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/roundedbutton"
+        android:padding="100dp"
+        android:scaleType="center"
         android:src="@drawable/buttonkerabat"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="459dp" />
+        android:contentDescription="button for relative"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tagline2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
