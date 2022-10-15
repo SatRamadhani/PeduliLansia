@@ -24,9 +24,11 @@ public class SplashScreenActivity extends AppCompatActivity
                 View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
+        // Handler to delay splash screen (1000ms = 1 second).
         Handler handler = new Handler();
         handler.postDelayed(() ->
         {
+            // Start MainActivity.
             startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
             finish();
         }, 3000);
