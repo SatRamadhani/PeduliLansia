@@ -1,5 +1,7 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,6 +32,8 @@ public class WelcomeFragment extends Fragment
     private String mParam2;
 
     private FragmentWelcomeBinding binding;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
     public WelcomeFragment()
     {
@@ -64,6 +68,8 @@ public class WelcomeFragment extends Fragment
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        preferences = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -85,6 +91,10 @@ public class WelcomeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                editor = preferences.edit();
+                editor.putInt("login", 2).apply();
+                System.out.println(preferences.getInt("login", 0));
+
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout, new RelativeSignupFragment()).commit();
             }
@@ -95,6 +105,10 @@ public class WelcomeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                editor = preferences.edit();
+                editor.putInt("login", 1).apply();
+                System.out.println(preferences.getInt("login", 0));
+
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout, new ElderSignupFragment()).commit();
             }
