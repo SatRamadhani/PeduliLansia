@@ -13,7 +13,6 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="wellcome_text">Selamat Datang</string>
     <string name="tag_line">"Solusi Masa Senja Anda"</string>
     <string name="as_a">Masuk sebagai…</string>
     <string name="button_as_a">Option button for user role</string>

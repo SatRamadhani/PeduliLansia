@@ -8,11 +8,11 @@
     tools:context=".WelcomeFragment">
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/elderButton"
         android:layout_width="123dp"
         android:layout_height="48dp"
         android:layout_margin="10dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/roundedbutton"
         android:backgroundTint="@color/primary_green"
         android:contentDescription="@string/button_as_a"
@@ -24,11 +24,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagline2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.897" />
 
     <TextView
-        android:id="@+id/tagline2"
+        android:id="@+id/optionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
@@ -66,20 +66,6 @@
         app:layout_constraintVertical_bias="0.42" />
 
     <TextView
-        android:id="@+id/welcometext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:letterSpacing="0.1"
-        android:text="@string/welcome"
-        android:textColor="#019267"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:textSize="26.5sp" />
-
-    <TextView
         android:id="@+id/tagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,11 +81,10 @@
         app:layout_constraintVertical_bias="0.324" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/relativeButton"
         android:layout_width="123dp"
         android:layout_height="48dp"
         android:layout_margin="10dp"
-        android:layout_marginBottom="68dp"
         android:background="@drawable/roundedbutton"
         android:backgroundTint="@color/secondary_green"
         android:contentDescription="@string/button_as_a"
@@ -111,7 +96,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagline2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.896" />
+
+    <TextView
+        android:id="@+id/welcometext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.1"
+        android:text="@string/welcome"
+        android:textColor="@color/primary_green"
+        android:textSize="26.5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

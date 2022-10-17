@@ -80,7 +80,7 @@ public class WelcomeFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.imageButton5.setOnClickListener(new View.OnClickListener()
+        binding.relativeButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -90,7 +90,7 @@ public class WelcomeFragment extends Fragment
             }
         });
 
-        binding.imageButton6.setOnClickListener(new View.OnClickListener()
+        binding.elderButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
