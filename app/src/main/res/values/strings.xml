@@ -16,4 +16,6 @@
     <string name="tag_line">"Solusi Masa Senja Anda"</string>
     <string name="as_a">Masuk sebagai…</string>
     <string name="button_as_a">Option button for user role</string>
+    <string name="logo">Logo PeduliLansia</string>
+    <string name="header">Wave image for header</string>
 </resources>
