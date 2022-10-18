@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity
         System.out.println("In MainActivity : " + user);
         if(user == 1)
         {
-            transaction.replace(R.id.frameLayout, new RelativeSignupFragment());
+            transaction.replace(R.id.frameLayout, new ElderSignupFragment());
         }
         else if(user == 2)
         {
-            transaction.replace(R.id.frameLayout, new ElderSignupFragment());
+            transaction.replace(R.id.frameLayout, new RelativeSignupFragment());
         }
         else
         {
