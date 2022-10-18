@@ -62,59 +62,7 @@
         app:layout_constraintGuide_begin="46dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="320dp"
-        android:layout_height="85dp"
-        android:background="@drawable/custom_input"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.02"
-        app:hintTextColor="@color/primary_green"
-        android:theme="@style/Theme.App.Base">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:drawableStart="@drawable/custom_name_icon"
-            android:drawablePadding="12dp"
-            android:paddingVertical="12dp"
-            android:ems="10"
-            android:hint="Nama Lengkap"
-            android:inputType="textPersonName"
-            android:fontFamily="@font/poppins" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="320dp"
-        android:layout_height="85dp"
-        android:background="@drawable/custom_input"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.23"
-        app:hintTextColor="@color/primary_green"
-        android:theme="@style/Theme.App.Base">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:drawableStart="@drawable/custom_gender_icon"
-            android:drawablePadding="12dp"
-            android:paddingVertical="12dp"
-            android:ems="10"
-            android:hint="Jenis Kelamin"
-            android:inputType="text"
-            android:fontFamily="@font/poppins" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/inputNama"
         android:layout_width="320dp"
         android:layout_height="85dp"
         android:background="@drawable/custom_input"
@@ -125,7 +73,63 @@
         app:layout_constraintEnd_toEndOf="@id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.44">
+        app:layout_constraintVertical_bias="0.02">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/custom_name_icon"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Nama Lengkap"
+            android:inputType="textPersonName"
+            android:paddingVertical="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputGender"
+        android:layout_width="320dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_input"
+        android:paddingHorizontal="10dp"
+        android:theme="@style/Theme.App.Base"
+        app:hintTextColor="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/inputNama"
+        app:layout_constraintVertical_bias="0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/custom_gender_icon"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Jenis Kelamin"
+            android:inputType="text"
+            android:paddingVertical="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputBirthdate"
+        android:layout_width="320dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/custom_input"
+        android:paddingHorizontal="10dp"
+        android:theme="@style/Theme.App.Base"
+        app:hintTextColor="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/inputGender"
+        app:layout_constraintVertical_bias="0">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
@@ -145,6 +149,7 @@
         android:layout_width="127dp"
         android:layout_height="56dp"
         android:background="@drawable/roundedbutton50"
+        android:backgroundTint="@color/primary_green"
         android:drawableEnd="@drawable/ic_baseline_arrow_circle_right"
         android:elevation="10dp"
         android:text="Selesai"
@@ -152,7 +157,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.841"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/inputBirthdate"
         app:layout_constraintVertical_bias="0.144" />
 
     <TextView
