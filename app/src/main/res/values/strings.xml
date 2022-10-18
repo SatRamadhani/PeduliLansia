@@ -2,6 +2,7 @@
     <string name="app_name">PeduliLansia</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -18,4 +19,5 @@
     <string name="button_as_a">Option button for user role</string>
     <string name="logo">Logo PeduliLansia</string>
     <string name="header">Wave image for header</string>
+
 </resources>

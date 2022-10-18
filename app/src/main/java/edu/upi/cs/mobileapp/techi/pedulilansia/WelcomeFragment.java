@@ -95,8 +95,10 @@ public class WelcomeFragment extends Fragment
                 editor.putInt("login", 2).apply();
                 System.out.println(preferences.getInt("login", 0));
 
+                // Should be replaced by "remove" then "add", but waiting for Fragment ID.
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayout, new RelativeSignupFragment()).commit();
+                        .replace(R.id.frameLayout, new WelcomeTopFragment())
+                        .add(R.id.frameLayout, new RelativeSignupFragment()).commit();
             }
         });
 
@@ -109,8 +111,10 @@ public class WelcomeFragment extends Fragment
                 editor.putInt("login", 1).apply();
                 System.out.println(preferences.getInt("login", 0));
 
+                // Should be replaced by "remove" then "add", but waiting for Fragment ID.
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayout, new ElderSignupFragment()).commit();
+                        .replace(R.id.frameLayout, new WelcomeTopFragment())
+                        .add(R.id.frameLayout, new ElderSignupFragment()).commit();
             }
         });
     }
