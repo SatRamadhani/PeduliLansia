@@ -91,8 +91,8 @@ public class WelcomeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-//                editor = preferences.edit();
-//                editor.putInt("login", 2).apply();
+                editor = preferences.edit();
+                editor.putInt("login", 2).apply();
                 System.out.println(preferences.getInt("login", 0));
 
                 // Should be replaced by "remove" then "add", but waiting for Fragment ID.
@@ -107,8 +107,8 @@ public class WelcomeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-//                editor = preferences.edit();
-//                editor.putInt("login", 1).apply();
+                editor = preferences.edit();
+                editor.putInt("login", 1).apply();
                 System.out.println(preferences.getInt("login", 0));
 
                 // Should be replaced by "remove" then "add", but waiting for Fragment ID.
