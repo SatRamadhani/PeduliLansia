@@ -2,19 +2,212 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativesignup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ElderSignupFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Coming Soon. Setidaknya kau sudah berhasil masuk Relative Page!"
-        android:textAlignment="center"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="166dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/pedulilansia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="224dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="585dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Buat Akun"
+        android:textColor="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="133dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/triplebubble"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="255dp"
+        android:layout_height="253dp"
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="62dp"
+        android:src="@drawable/doublebubble"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.732"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="127dp"
+        android:layout_height="56dp"
+        android:background="@drawable/roundedbutton50"
+        android:backgroundTint="@color/primary_green"
+        android:drawableEnd="@drawable/ic_baseline_arrow_circle_right"
+        android:elevation="10dp"
+        android:text="Daftar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Sudah mempunyai akun?"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Masuk!"
+        android:textColor="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputNama"
+        android:layout_width="278dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="490dp"
+        android:background="@drawable/custom_input"
+        android:paddingHorizontal="10dp"
+
+        app:hintTextColor="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="299dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/custom_name_icon"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Nama Lengkap"
+            android:inputType="textPersonName"
+            android:paddingVertical="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEmail"
+        android:layout_width="278dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="420dp"
+        android:background="@drawable/custom_input"
+        android:paddingHorizontal="10dp"
+        app:hintTextColor="@color/primary_green"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="299dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Alamat Email"
+            android:inputType="textPersonName"
+            android:paddingVertical="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputPassword"
+        android:layout_width="278dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="350dp"
+        android:background="@drawable/custom_input"
+        android:paddingHorizontal="10dp"
+        app:hintTextColor="@color/primary_green"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="299dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:paddingVertical="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputConfirmPassword"
+        android:layout_width="278dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="280dp"
+        android:background="@drawable/custom_input"
+        android:paddingHorizontal="10dp"
+        app:hintTextColor="@color/primary_green"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="299dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Konfirmasi Passsword"
+            android:inputType="textPersonName"
+            android:paddingVertical="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
