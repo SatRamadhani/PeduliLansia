@@ -42,12 +42,12 @@
         android:text="Data Diri"
         android:textColor="@color/primary_green"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -95,10 +95,10 @@
         android:layout_width="320dp"
         android:layout_height="85dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/custom_input_focused"
+        android:gravity="center_vertical"
         android:paddingHorizontal="10dp"
         android:theme="@style/TextLabel"
-        android:gravity="center_vertical"
         app:hintTextColor="@color/primary_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline6"
@@ -109,18 +109,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jenis Kelamin"
-            android:textSize="12sp"
             android:drawablePadding="12dp"
-            android:paddingStart="38dp"/>
+            android:focusedByDefault="true"
+            android:paddingStart="38dp"
+            android:text="Jenis Kelamin"
+            android:textColor="@color/primary_green"
+            android:textSize="12sp" />
+
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/custom_gender_icon"/>
+                android:src="@drawable/gender_icon_focused" />
+
             <RadioButton
                 android:id="@+id/maleRadio"
                 android:layout_width="120dp"
@@ -147,33 +152,6 @@
         </RadioGroup>
 
     </com.google.android.material.textfield.TextInputLayout>
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/inputGender"-->
-<!--        android:layout_width="320dp"-->
-<!--        android:layout_height="85dp"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        android:background="@drawable/custom_input"-->
-<!--        android:paddingHorizontal="10dp"-->
-<!--        android:theme="@style/TextLabel"-->
-<!--        app:hintTextColor="@color/primary_green"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/guideline6"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/guideline9"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/inputNama"-->
-<!--        app:layout_constraintVertical_bias="0">-->
-<!--        -->
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="83dp"-->
-<!--            android:background="@android:color/transparent"-->
-<!--            android:drawableStart="@drawable/custom_gender_icon"-->
-<!--            android:drawablePadding="12dp"-->
-<!--            android:ems="10"-->
-<!--            android:fontFamily="@font/poppins"-->
-<!--            android:hint="Jenis Kelamin"-->
-<!--            android:inputType="text"-->
-<!--            android:paddingVertical="12dp" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputBirthdate"
@@ -200,18 +178,19 @@
             android:fontFamily="@font/poppins"
             android:hint="Tanggal Lahir"
             android:inputType="date"
-            android:paddingVertical="12dp" />
+            android:paddingVertical="12dp"
+            android:theme="@style/TextLabel" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="127dp"
         android:layout_height="56dp"
-        android:backgroundTint="@color/primary_green"
         android:background="@drawable/roundedbutton50"
+        android:backgroundTint="@color/primary_green"
         android:drawableEnd="@drawable/ic_baseline_arrow_circle_right"
-        android:paddingHorizontal="20sp"
         android:elevation="10dp"
+        android:paddingHorizontal="20sp"
         android:text="Selesai"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -219,7 +198,7 @@
         app:layout_constraintHorizontal_bias="0.841"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputBirthdate"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintVertical_bias="0.099" />
 
     <TextView
         android:id="@+id/textView3"
@@ -229,11 +208,25 @@
         android:letterSpacing="0.1"
         android:text="Solusi Masa Senja Anda"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.733" />
+        app:layout_constraintVertical_bias="0.973" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="77dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="39dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
