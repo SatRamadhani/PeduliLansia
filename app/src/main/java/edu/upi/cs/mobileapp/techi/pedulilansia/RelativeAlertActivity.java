@@ -1,15 +1,13 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 
-public class SplashScreenActivity extends AppCompatActivity
+public class RelativeAlertActivity extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -24,17 +22,9 @@ public class SplashScreenActivity extends AppCompatActivity
                 View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        // Set content view.
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_relative_alert);
 
-        // Handler to delay splash screen (1000ms = 1 second).
-        Handler handler = new Handler();
-
-        handler.postDelayed(() ->
-        {
-            // Start MainActivity.
-            startActivity(new Intent(SplashScreenActivity.this, RelativeMapsActivity.class));
-            finish();
-        }, 3000);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.frameLayout, new RelativeRedAlertFragment()).commit();
     }
 }

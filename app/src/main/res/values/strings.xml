@@ -19,5 +19,6 @@
     <string name="button_as_a">Option button for user role</string>
     <string name="logo">Logo PeduliLansia</string>
     <string name="header">Wave image for header</string>
+    <string name="title_activity_relative_maps">RelativeMapsActivity</string>
 
 </resources>

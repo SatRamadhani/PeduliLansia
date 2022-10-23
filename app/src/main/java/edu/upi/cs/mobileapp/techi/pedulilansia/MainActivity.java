@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity
         }
         else
         {
-            transaction.add(R.id.frameLayout, new WelcomeFragment());
+            transaction.add(R.id.frameLayout, new RelativeRedAlertFragment());
         }
 
         transaction.commit();

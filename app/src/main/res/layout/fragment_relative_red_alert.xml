@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_red_alert"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    tools:context=".RelativeRedAlertFragment">
+
+    <ImageView
+        android:id="@+id/img_relative_alert_circle"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_relative_alert_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton50"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:fontFamily="@font/poppins"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Saya akan membantunya."
+        android:textAllCaps="false"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_relative_alert_sos"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_relative_alert_decline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton50"
+        android:backgroundTint="@color/black_secondary"
+        android:elevation="10dp"
+        android:fontFamily="@font/poppins"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Saya tidak bisa."
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_relative_alert_accept"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <ImageView
+        android:id="@+id/img_relative_alert_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pedulilansiawhite"
+        app:layout_constraintBottom_toTopOf="@+id/img_relative_alert_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/txt_relative_alert_sos"
+        android:layout_width="wrap_content"
+        android:layout_height="175dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="SOS"
+        android:textColor="@android:color/white"
+        android:textSize="128sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_relative_alert_circle"
+        app:layout_constraintEnd_toEndOf="@+id/img_relative_alert_circle"
+        app:layout_constraintStart_toStartOf="@+id/img_relative_alert_circle"
+        app:layout_constraintTop_toTopOf="@+id/img_relative_alert_circle" />
+
+    <TextView
+        android:id="@+id/txt_relative_alert_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Nampaknya ...\nmembutuhkan bantuan!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/img_relative_alert_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_relative_alert_logo" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Mengabaikan peringatan\ndalam 60 detik..."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_relative_alert_decline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
