@@ -98,7 +98,7 @@ public class WelcomeFragment extends Fragment
                 // Should be replaced by "remove" then "add", but waiting for Fragment ID.
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout, new WelcomeTopFragment())
-                        .add(R.id.frameLayout, new RelativeSignupFragment()).commit();
+                        .add(R.id.frameLayout, new RelativeLoginFragment()).commit();
             }
         });
 

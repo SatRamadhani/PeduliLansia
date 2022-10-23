@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if(user == 2)
         {
-            transaction.add(R.id.frameLayout, new RelativeSignupFragment());
+            transaction.add(R.id.frameLayout, new RelativeDashboardFragment());
         }
         else
         {
