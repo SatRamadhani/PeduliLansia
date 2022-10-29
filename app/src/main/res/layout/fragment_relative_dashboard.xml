@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativedashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".RelativeDashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relative_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Guide Line -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinebottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinetop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinemenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.111" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinestatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinekegiatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.755" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinekegiatan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.760" />
+
+        <!-- End of Guide Line -->
+        <!-- Logo -->
+
+        <ImageView
+            android:id="@+id/relative_dashboard_logo"
+            android:layout_width="126dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/pedulilansia"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinemenu"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- Menu -->
+
+        <ImageView
+            android:id="@+id/relative_dashboard_menuIcon"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:background="@drawable/menu_bg"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_icon"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinemenu"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/relative_dashboard_logo"
+            app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <FrameLayout
+            android:id="@+id/relative_dashboard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/relative_dashboard_status"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/guidelinemenu"
+            app:layout_constraintVertical_bias="0">
+
+            <TextView
+                android:id="@+id/relative_dashboard_title_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Kerabat"
+                android:textColor="@color/primary_green"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/relative_dashboard_title_child"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="| Dashboard"
+                android:textColor="@color/primary_green"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <!-- End of Menu-->
+
+        <!-- Status -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/relative_dashboard_status"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/primary_green"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:contentPadding="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinestatus"
+            app:layout_constraintVertical_bias="0.003">
+
+            <LinearLayout
+                android:id="@+id/relative_dashboard_status_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/relative_dashboard_statusImage_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp">
+
+                    <ImageView
+                        android:id="@+id/relative_dashboard_status_outerCircle"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/outercircle_icon"/>
+
+                    <ImageView
+                        android:id="@+id/relative_dashboard_status_innerCircle"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/innercircle_icon" />
+
+                    <LinearLayout
+                        android:id="@+id/relative_dashboard_statusImage_text_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/relative_dashboard_statusImage_text_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Status"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/relative_dashboard_statusImage_text_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-13dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Aman"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/relative_dashboard_statusText_layout"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/relative_dashboard_statusText_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Kerabat:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/relative_dashboard_statusText_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableEnd="@drawable/safe_icon"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Pak Satria"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:id="@+id/relative_dashboard_statusText_text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableEnd="@drawable/safe_icon"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Pak Techi"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:id="@+id/relative_dashboard_statusText_text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableEnd="@drawable/safe_icon"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Bu Tini"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- End of Status -->
+
+        <!-- Calender -->
+
+        <RelativeLayout
+            android:id="@+id/relative_dashboard_calendar_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender_bg"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboard_status"
+            app:layout_constraintVertical_bias="0.03">
+
+            <CalendarView
+                android:id="@+id/relative_dashboard_calendar"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:dateTextAppearance="@style/CalenderViewDateCustomText"
+                android:theme="@style/CalenderViewCustom"
+                android:weekDayTextAppearance="@style/CalenderWeekDayText" />
+        </RelativeLayout>
+
+        <!-- End of Calender-->
+
+        <!-- Schedule -->
+
+        <LinearLayout
+            android:id="@+id/relative_dashboard_schedule_title_layout"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/guidelinekegiatan2"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboard_calendar_layout">
+
+            <TextView
+                android:id="@+id/relative_dashboard_schedule_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Kegiatan Lansia"
+                android:textColor="@color/primary_green"
+                android:textSize="18sp"
+                android:layout_marginEnd="3dp"/>
+
+            <ImageView
+                android:id="@+id/relative_dashboard_schedule_title_addIcon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/rounded50"
+                android:backgroundTint="@color/primary_green"
+                android:src="@drawable/add_icon"
+                android:layout_marginEnd="95dp"/>
+
+            <TextView
+                android:id="@+id/relative_dashboard_schedule_title_allIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/black_secondary"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.05"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="2dp"
+                android:text="Semua"
+                android:textColor="@color/white"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/relative_dashboard_schedule_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Selasa, 25 Oktober 2022"
+            android:textColor="#9590A0"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinekegiatan"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:id="@+id/relative_dashboard_schedule_description_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintBottom_toTopOf="@+id/relative_dashboard_schedule_scroll"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboard_schedule_date">
+
+            <TextView
+                android:id="@+id/relative_dashboard_schedule_description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/red"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="2dp"
+                android:text="Obat"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/relative_dashboard_schedule_description_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="2dp"
+                android:text="Check up"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/relative_dashboard_schedule_description_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="2dp"
+                android:text="Lain-lain"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/relative_dashboard_schedule_scroll"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboard_schedule_date"
+            app:layout_constraintVertical_bias="1">
+
+            <LinearLayout
+                android:id="@+id/relative_dashboard_schedule_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/relative_dashboard_schedule_card"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@color/yellow"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/relative_dashboard_schedule_card_layout"
+                        android:layout_width="240dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/relative_dashboard_schedule_cardText_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/relative_dashboard_schedule_cardText_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Check up"
+                                android:textColor="@color/yellow"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/relative_dashboard_schedule_cardText_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:fontFamily="@font/poppins"
+                                android:letterSpacing="0.05"
+                                android:text="09:00 AM - 10:00 AM"
+                                android:textColor="@color/black_secondary"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/relative_dashboard_schedule_cardUser_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/relative_dashboard_schedule_cardUser_user"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:background="@drawable/rounded50"
+                                    android:backgroundTint="@color/black_secondary"
+                                    android:src="@drawable/user_icon" />
+
+                                <ImageView
+                                    android:id="@+id/relative_dashboard_schedule_cardUser_user2"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:background="@drawable/rounded50"
+                                    android:backgroundTint="@color/black_secondary"
+                                    android:src="@drawable/user_icon" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/relative_dashboard_schedule_cardImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded50"
+                            android:backgroundTint="@color/yellow"
+                            android:padding="12dp"
+                            android:src="@drawable/doctor_icon" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/relative_dashboard_schedule_card2"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/red"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/relative_dashboard_schedule_card2_layout"
+                        android:layout_width="240dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/relative_dashboard_schedule_cardText2_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/relative_dashboard_schedule_cardText2_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Minum Obat"
+                                android:textColor="@color/red"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/relative_dashboard_schedule_cardText2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:fontFamily="@font/poppins"
+                                android:letterSpacing="0.05"
+                                android:text="01:00 PM - 01:30 PM"
+                                android:textColor="@color/black_secondary"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/relative_dashboard_schedule_cardUser2_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/relative_dashboard_schedule_cardUser2_user"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:background="@drawable/rounded50"
+                                    android:backgroundTint="@color/black_secondary"
+                                    android:src="@drawable/user_icon" />
+
+                                <ImageView
+                                    android:id="@+id/relative_dashboard_schedule_cardUser2_user2"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:background="@drawable/rounded50"
+                                    android:backgroundTint="@color/black_secondary"
+                                    android:src="@drawable/user_icon" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/relative_dashboard_schedule_cardImage2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded50"
+                            android:backgroundTint="@color/red"
+                            android:padding="12dp"
+                            android:src="@drawable/medicine_icon" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
