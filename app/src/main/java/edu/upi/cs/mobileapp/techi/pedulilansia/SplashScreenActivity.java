@@ -33,7 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity
         handler.postDelayed(() ->
         {
             // Start MainActivity.
-            startActivity(new Intent(SplashScreenActivity.this, RelativeMapsActivity.class));
+            startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
             finish();
         }, 3000);
     }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/eldermenu"
+    tools:context=".ElderMenuFragment">
+
+    <!-- Guide Line -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <!-- End of Guide Line -->
+
+    <LinearLayout
+        android:id="@+id/elder_menu_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinetop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/elder_menu_logo"
+            android:layout_width="126dp"
+            android:layout_height="22dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitStart"
+            android:src="@drawable/pedulilansia" />
+
+        <ImageView
+            android:id="@+id/elder_menu_menuIcon"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_weight="0.0001"
+            android:background="@drawable/menu_bg"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/elder_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+        app:layout_constraintVertical_bias="0">
+
+        <TextView
+            android:id="@+id/elder_menu_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:drawableStart="@drawable/menu_selector"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:text="Dashboard"
+            android:textColor="@color/primary_green"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/grey_50" />
+
+        <TextView
+            android:id="@+id/elder_menu_kerabat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:drawableStart="@drawable/menu_selector_none"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:text="Kerabat"
+            android:textColor="@color/black_secondary"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/grey_50" />
+
+        <TextView
+            android:id="@+id/elder_menu_jadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:drawableStart="@drawable/menu_selector_none"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:text="Jadwal Medis"
+            android:textColor="@color/black_secondary"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
