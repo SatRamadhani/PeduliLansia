@@ -1,7 +1,5 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +8,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentWelcomeBinding;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link WelcomeTopFragment#newInstance} factory method to
+ * Use the {@link GeneralWelcomeTopFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WelcomeTopFragment extends Fragment
+public class GeneralWelcomeTopFragment extends Fragment
 {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -29,7 +25,7 @@ public class WelcomeTopFragment extends Fragment
     private String mParam1;
     private String mParam2;
 
-    public WelcomeTopFragment()
+    public GeneralWelcomeTopFragment()
     {
         // Required empty public constructor.
     }
@@ -44,9 +40,9 @@ public class WelcomeTopFragment extends Fragment
      * @return A new instance of fragment WelcomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WelcomeTopFragment newInstance(String param1, String param2)
+    public static GeneralWelcomeTopFragment newInstance(String param1, String param2)
     {
-        WelcomeTopFragment fragment = new WelcomeTopFragment();
+        GeneralWelcomeTopFragment fragment = new GeneralWelcomeTopFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,7 +63,7 @@ public class WelcomeTopFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.fragment_welcome_top, container, false);
+        return inflater.inflate(R.layout.fragment_general_welcome_top, container, false);
     }
 
     @Override

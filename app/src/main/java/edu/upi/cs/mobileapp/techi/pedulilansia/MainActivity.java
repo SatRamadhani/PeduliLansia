@@ -1,56 +1,40 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentWelcomeTopBinding;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity
 {
+    private FragmentTransaction transaction;
     private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        preferences = getApplicationContext().getSharedPreferences("user", 0);
+        preferences = getSharedPreferences("edu.upi.cs.mobileapp.techi.pedulilansia.user",
+                MODE_PRIVATE);
+        transaction = getSupportFragmentManager().beginTransaction();
 
-        if (Build.VERSION.SDK_INT >= 21)
+
+        String user = preferences.getString("role", null);
+        if(user.equals("elder"))
         {
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.primary_green));
-            window.setNavigationBarColor(getResources().getColor(R.color.primary_green));
+            transaction.add(R.id.main, new ElderStatusDangerFragment());
         }
-
-        // Set content view.
-        setContentView(R.layout.activity_main);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-        int user = preferences.getInt("login", 0);
-        System.out.println("In MainActivity : " + user);
-
-        transaction.add(R.id.frameLayout, new WelcomeTopFragment());
-        if(user == 1)
+        else if(user.equals("relative"))
         {
-            transaction.add(R.id.frameLayout, new ElderSignupFragment());
-        }
-        else if(user == 2)
-        {
-            transaction.add(R.id.frameLayout, new RelativeDashboardFragment());
+            transaction.add(R.id.main, new RelativeDashboardFragment());
         }
         else
         {
-            transaction.add(R.id.frameLayout, new RelativeRedAlertFragment());
+            finish();
         }
 
         transaction.commit();
+        setContentView(R.layout.activity_main);
     }
 }

@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_relative_alert_logo" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/relative_txt_alert_countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"

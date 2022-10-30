@@ -135,5 +135,11 @@
             android:drawablePadding="12dp"
             android:gravity="center_vertical"/>
 
+        <Button
+            android:id="@+id/relative_menu_btn_debug_danger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pencet ini untuk simulasi Elder bahaya." />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
