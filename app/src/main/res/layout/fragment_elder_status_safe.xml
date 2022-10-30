@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeRedAlertFragment"
+    tools:layout_editor_absoluteX="-41dp"
+    tools:layout_editor_absoluteY="-19dp">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ImageView
+        android:id="@+id/img_elder_safe_logo"
+        android:layout_width="139dp"
+        android:layout_height="26dp"
+        android:src="@drawable/pedulilansia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
+
+
+    <ImageButton
+        android:id="@+id/btn_elder_safe_menu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundcorner"
+        android:src="@drawable/menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageButton
+        android:id="@+id/img_elder_safe_circles"
+        android:layout_width="296dp"
+        android:layout_height="296dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <TextView
+        android:id="@+id/txt_elder_safe_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_elder_safe_statusname"
+        app:layout_constraintEnd_toEndOf="@+id/img_elder_safe_circles"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/img_elder_safe_circles"
+        app:layout_constraintTop_toTopOf="@+id/img_elder_safe_circles"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_elder_safe_statusname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Aman"
+        android:textColor="@color/primary_green"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_elder_safe_circles"
+        app:layout_constraintEnd_toEndOf="@+id/img_elder_safe_circles"
+        app:layout_constraintStart_toStartOf="@+id/img_elder_safe_circles"
+        app:layout_constraintTop_toTopOf="@+id/img_elder_safe_circles"
+        app:layout_constraintVertical_bias="0.51"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_elder_safe_fallicon"
+        android:layout_width="144dp"
+        android:layout_height="137dp"
+        android:src="@drawable/fall_icon_status_safe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <TextView
+        android:id="@+id/txt_elder_safe_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Pak Satria"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_elder_safe_circles" />
+
+    <TextView
+        android:id="@+id/txt_elder_safe_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="70 tahun"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_elder_safe_name" />
+
+    <TextView
+        android:id="@+id/txt_elder_safe_quote"
+        android:layout_width="336dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:text="“Kekayaan yang paling utama adalah kesehatan.”"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/img_elder_safe_circles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/btn_elder_safe_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/roundedbuttonsos"
+        android:text="Tekan Jika Bahaya"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_elder_safe_age"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
