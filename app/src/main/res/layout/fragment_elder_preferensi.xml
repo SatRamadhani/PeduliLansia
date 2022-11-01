@@ -3,174 +3,183 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/eldermenu"
+    tools:context=".ElderMenuFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/headerPreferensi"
-        android:layout_width="393dp"
-        android:layout_height="81dp"
-        tools:layout_editor_absoluteX="0dp">
+    <!-- Guide Line -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <!-- End of Guide Line -->
+
+    <LinearLayout
+        android:id="@+id/elder_menu_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinetop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="0dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/preferensi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pedulilansia" />
+            android:id="@+id/elder_menu_logo"
+            android:layout_width="10dp"
+            android:layout_height="22dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitStart"
+            android:src="@drawable/pedulilansia" />
 
         <TextView
-            android:id="@+id/preferensi"
-            android:layout_width="0dp"
+            android:id="@+id/kerabat_header"
+            android:layout_width="92dp"
             android:layout_height="28dp"
-            android:layout_marginEnd="25dp"
+            android:layout_weight="1"
             android:fontFamily="@font/poppins"
-            android:text="| Preferensi"
+            android:text=" | Preferensi"
             android:textColor="@color/primary_green"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="18sp" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="22dp"
-            android:background="@drawable/roundedbutton50"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/preferensi"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_setting_button" />
+        <ImageView
+            android:id="@+id/elder_menu_menuIcon"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_weight="0.0001"
+            android:background="@drawable/menu_bg"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_icon" />
+    </LinearLayout>
 
-        <androidx.constraintlayout.widget.Barrier
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="top"
-            tools:layout_editor_absoluteX="124dp"
-            tools:layout_editor_absoluteY="72dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/judul"
-        android:layout_width="327dp"
-        android:layout_height="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/headerPreferensi"
-        tools:layout_editor_absoluteX="32dp">
+    <LinearLayout
+        android:id="@+id/elder_menu_layout"
+        android:layout_width="396dp"
+        android:layout_height="500dp"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+        app:layout_constraintVertical_bias="0">
 
         <TextView
-            android:id="@+id/panduan"
+            android:id="@+id/elder_preferensi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="190dp"
-            android:fontFamily="@font/poppins"
+            android:layout_marginVertical="8dp"
+            android:color="@color/black"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
             android:text="Tulis Panduan"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:textColor="@color/black_secondary"
+            android:textSize="24sp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="327dp"
-        android:layout_height="671dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@+id/judul"
-        tools:layout_editor_absoluteX="32dp">
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/grey_50" />
 
         <TextView
-            android:id="@+id/advance"
-            android:layout_width="wrap_content"
+            android:id="@+id/langkah_lanjut"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="190dp"
             android:fontFamily="@font/poppins"
             android:text="Langkah Lanjut"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/textView7"
-            android:layout_width="295dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/poppins"
-            android:text="Atur tindakan ketika tidak ada kerabat yang dapat menolong"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/advance" />
-
-        <RadioButton
-            android:id="@+id/nodarurat"
+            android:id="@+id/elder_menu_kerabat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="58dp"
-            android:text="No. darurat"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/orangasing"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            android:layout_marginVertical="8dp"
+            android:drawableStart="@drawable/menu_selector_none"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="fill_horizontal"
+            android:text="Atur tindakan ketika tidak ada kerabat yang dapat menolong"
+            android:textColor="@color/black_secondary"
+            android:textSize="20sp" />
 
-        <RadioButton
-            android:id="@+id/orangasing"
-            android:layout_width="108dp"
+        <RadioGroup
+            android:layout_width="374dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Orang asing"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nodarurat"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="320dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="229dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:layout_marginBottom="424dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nodarurat">
+            <RadioButton
+                android:id="@+id/nodarurat"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:text="No. darurat"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/orangasing"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:text="Orang asing"
+                android:textColor="@color/black" />
+
+        </RadioGroup>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="229dp"
-                android:layout_height="40dp"
-                android:background="@android:color/transparent"
+                android:id="@+id/elder_input_nodarurat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input"
                 android:drawablePadding="12dp"
+                android:ems="10"
                 android:fontFamily="@font/poppins"
-                android:hint="Masukkan no. darurat" />
+                android:hint="Masukkan no.darurat"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:theme="@style/TextLabel"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.044" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Simpan" />
+        </LinearLayout>
 
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="94dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="27dp"
-            android:layout_marginBottom="424dp"
-            android:text="Simpan"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/orangasing"
-            tools:layout_editor_absoluteX="233dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    />
-
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
