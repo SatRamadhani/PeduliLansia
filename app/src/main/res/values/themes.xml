@@ -43,5 +43,11 @@
         <item name="android:textColor">@color/grey</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
+    <style name="Theme.PeduliLansia.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.PeduliLansia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.PeduliLansia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

@@ -25,6 +25,6 @@ public class RelativeAlertActivity extends AppCompatActivity
         setContentView(R.layout.activity_relative_alert);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.frameLayout, new RelativeRedAlertFragment()).commit();
+        transaction.add(R.id.relative_alert, new RelativeAlertRedFragment()).commit();
     }
 }

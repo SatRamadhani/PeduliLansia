@@ -193,7 +193,7 @@
         app:layout_constraintVertical_bias="0.027" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signupButton"
+        android:id="@+id/relative_btn_signup"
         android:layout_width="127dp"
         android:layout_height="56dp"
         android:background="@drawable/rounded50"
@@ -223,7 +223,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
         app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/signupButton"
+        app:layout_constraintTop_toBottomOf="@+id/relative_btn_signup"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintHorizontal_bias="0.5">
 

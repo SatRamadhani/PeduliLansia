@@ -1,7 +1,439 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
+    android:id="@+id/relativereddashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RelativeRedDashboardFragment" />
+    android:fillViewport="true"
+    tools:context=".RelativeDashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relative_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Guide Line -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinebottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinetop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinemenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.111" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinestatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinekegiatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.785" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinekegiatan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.79" />
+
+        <!-- End of Guide Line -->
+
+        <!-- Logo -->
+
+        <ImageView
+            android:id="@+id/relative_dashboardRed_logo"
+            android:layout_width="126dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/pedulilansiared"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinemenu"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- Menu -->
+
+        <ImageView
+            android:id="@+id/relative_dashboardRed_menuIcon"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:background="@drawable/menu_bg"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_icon"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinemenu"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/relative_dashboardRed_logo"
+            app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <FrameLayout
+            android:id="@+id/relative_dashboardRed_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/relative_dashboardRed_status"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/guidelinemenu"
+            app:layout_constraintVertical_bias="0">
+
+            <TextView
+                android:id="@+id/relative_dashboardRed_title_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Kerabat"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/relative_dashboardRed_title_child"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="| Dashboard"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <!-- End of Menu-->
+
+        <!-- Status -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/relative_dashboardRed_status"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/red"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:contentPadding="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinestatus"
+            app:layout_constraintVertical_bias="0.003">
+
+            <LinearLayout
+                android:id="@+id/relative_dashboardRed_status_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/relative_dashboardRed_statusImage_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/relative_dashboardRed_status_outerCircle"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/outercircle_icon"/>
+
+                    <ImageView
+                        android:id="@+id/relative_dashboardRed_status_innerCircle"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/innercircle_icon" />
+
+                    <LinearLayout
+                        android:id="@+id/relative_dashboardRed_statusImage_text_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/relative_dashboardRed_statusImage_text_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Status"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/relative_dashboardRed_statusImage_text_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-13dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Bahaya"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/relative_dashboardRed_statusText_layout"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/relative_dashboardRed_statusText_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Kerabat:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/relative_dashboardRed_statusText_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableEnd="@drawable/safe_icon"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Pak Satria"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginTop="-12dp"/>
+                    <TextView
+                        android:id="@+id/relative_dashboardRed_statusText_text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableEnd="@drawable/warning_icon"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Pak Techi"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginTop="-12dp"/>
+                    <TextView
+                        android:id="@+id/relative_dashboardRed_statusText_text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableEnd="@drawable/safe_icon"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Bu Tini"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginTop="-12dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- End of Status -->
+
+        <!-- Map -->
+
+        <RelativeLayout
+            android:id="@+id/relative_dashboardRed_map_layout"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:background="@drawable/calender_bg"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboardRed_status"
+            app:layout_constraintVertical_bias="0.07">
+
+            <fragment
+                android:id="@+id/relative_dashboardRed_map"
+                android:layout_centerInParent="true"
+                android:layout_width="335dp"
+                android:layout_height="335dp"
+                android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+        </RelativeLayout>
+
+        <!-- End of Map -->
+
+        <!-- Elder name text -->
+
+        <LinearLayout
+            android:id="@+id/relative_dashboardRed_elderName_layout"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/guidelinekegiatan2"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboardRed_map_layout">
+
+            <TextView
+                android:id="@+id/relative_dashboardRed_ElderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Pak Tono"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:layout_marginEnd="3dp"/>
+
+            <TextView
+                android:id="@+id/relative_dashboardRed_ElderName_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="terjatuh!"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:layout_marginEnd="3dp"/>
+        </LinearLayout>
+
+        <!-- End of Elder Name Text -->
+
+        <!-- Elder Status Text -->
+
+        <LinearLayout
+            android:id="@+id/relative_dashboardRed_elderStatus_layout"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinekegiatan"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/relative_dashboardRed_elderStatus_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Status: "
+                android:textColor="#9590A0"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/relative_dashboardRed_elderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Bahaya"
+                android:textColor="#9590A0"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- End of Elder Status Text -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/relative_dashboardRed_helpCard"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/red"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/relative_dashboardRed_elderStatus_layout">
+
+            <LinearLayout
+                android:id="@+id/relative_dashboardRed_helpCard_layout"
+                android:layout_width="340dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="30dp">
+
+                <LinearLayout
+                    android:id="@+id/relative_dashboardRed_helpCard_text_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/relative_dashboardRed_helpCard_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Status Bantuan"
+                        android:textColor="@color/red"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/relative_dashboardRed_helpCard_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-5dp"
+                        android:fontFamily="@font/poppins"
+                        android:letterSpacing="0.05"
+                        android:text="Mencari bantuan..."
+                        android:textColor="@color/black_secondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/relative_dashboardRed_helpCard_button"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/rounded50"
+                    android:backgroundTint="@color/red"
+                    android:padding="12dp"
+                    android:elevation="10dp"
+                    android:src="@drawable/run_icon" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

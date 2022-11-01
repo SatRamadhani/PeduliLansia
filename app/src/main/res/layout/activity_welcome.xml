@@ -5,10 +5,10 @@
     android:id="@+id/welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeFragment">
+    tools:context=".WelcomeActivity">
 
     <ImageButton
-        android:id="@+id/elderButton"
+        android:id="@+id/welcome_btn_elder"
         android:layout_width="123dp"
         android:layout_height="48dp"
         android:layout_margin="10dp"
@@ -35,7 +35,7 @@
         android:letterSpacing="0.2"
         android:text="@string/as_a"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/elderButton"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_btn_elder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.966" />
 
     <ImageButton
-        android:id="@+id/relativeButton"
+        android:id="@+id/welcome_btn_relative"
         android:layout_width="123dp"
         android:layout_height="48dp"
         android:layout_margin="10dp"
@@ -55,7 +55,7 @@
         android:scaleType="center"
         android:src="@drawable/buttonkerabat"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/elderButton"
+        app:layout_constraintEnd_toStartOf="@+id/welcome_btn_elder"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/tagline"

@@ -27,13 +27,10 @@ public class SplashScreenActivity extends AppCompatActivity
         // Set content view.
         setContentView(R.layout.activity_splash_screen);
 
-        // Handler to delay splash screen (1000ms = 1 second).
-        Handler handler = new Handler();
-
-        handler.postDelayed(() ->
+        new Handler().postDelayed(() ->
         {
             // Start MainActivity.
-            startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+            startActivity(new Intent(SplashScreenActivity.this, WelcomeActivity.class));
             finish();
         }, 3000);
     }

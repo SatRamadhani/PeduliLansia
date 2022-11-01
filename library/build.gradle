@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'edu.upi.cs.mobileapp.techi.library'
+    namespace 'edu.upi.cs.mobileapp.techi.wave'
     compileSdk 32
 
     defaultConfig {
