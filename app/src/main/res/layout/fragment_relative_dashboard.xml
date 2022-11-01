@@ -72,6 +72,7 @@
             app:layout_constraintGuide_percent="0.760" />
 
         <!-- End of Guide Line -->
+
         <!-- Logo -->
 
         <ImageView
@@ -165,7 +166,8 @@
                     android:id="@+id/relative_dashboard_statusImage_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="25dp">
+                    android:layout_marginEnd="25dp"
+                    android:layout_gravity="center_vertical">
 
                     <ImageView
                         android:id="@+id/relative_dashboard_status_outerCircle"
@@ -231,35 +233,39 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/user_icon"
                         android:drawableEnd="@drawable/safe_icon"
+                        android:gravity="center_vertical"
                         android:drawablePadding="8dp"
                         android:fontFamily="@font/poppins_light"
                         android:text="Pak Satria"
                         android:textColor="@color/white"
                         android:textSize="14sp"
-                        android:layout_marginBottom="2dp"/>
+                        android:layout_marginTop="-12dp"/>
                     <TextView
                         android:id="@+id/relative_dashboard_statusText_text2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/user_icon"
                         android:drawableEnd="@drawable/safe_icon"
+                        android:gravity="center_vertical"
                         android:drawablePadding="8dp"
                         android:fontFamily="@font/poppins_light"
                         android:text="Pak Techi"
                         android:textColor="@color/white"
                         android:textSize="14sp"
-                        android:layout_marginBottom="2dp"/>
+                        android:layout_marginTop="-12dp"/>
                     <TextView
                         android:id="@+id/relative_dashboard_statusText_text3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/user_icon"
                         android:drawableEnd="@drawable/safe_icon"
+                        android:gravity="center_vertical"
                         android:drawablePadding="8dp"
                         android:fontFamily="@font/poppins_light"
                         android:text="Bu Tini"
                         android:textColor="@color/white"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp"
+                        android:layout_marginTop="-12dp"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

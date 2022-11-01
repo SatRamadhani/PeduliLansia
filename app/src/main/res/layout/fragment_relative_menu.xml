@@ -14,14 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.385" />
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelinetop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07968575" />
+        app:layout_constraintGuide_percent="0.12" />
 
     <!-- End of Guide Line -->
 
@@ -29,15 +29,17 @@
         android:id="@+id/relative_menu_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="15dp"
+        android:background="@android:color/transparent"
+        android:elevation="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="15dp"
+        android:paddingHorizontal="29dp"
+        android:paddingVertical="30dp"
         app:layout_constraintBottom_toTopOf="@+id/guidelinetop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
 
         <ImageView
             android:id="@+id/relative_menu_logo"
@@ -46,17 +48,16 @@
             android:layout_weight="1"
             android:contentDescription="@string/logo"
             android:scaleType="fitStart"
-            android:src="@drawable/pedulilansia" />
+            android:background="@android:color/transparent"/>
 
         <ImageView
             android:id="@+id/relative_menu_menuIcon"
             android:layout_width="43dp"
             android:layout_height="43dp"
             android:layout_weight="0.0001"
-            android:background="@drawable/menu_bg"
+            android:background="@android:color/transparent"
             android:padding="4dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/menu_icon" />
+            android:scaleType="centerCrop" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,7 +66,8 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical"
-        android:paddingVertical="30dp"
+        android:paddingTop="22dp"
+        android:paddingBottom="30dp"
         android:paddingHorizontal="15dp"
         android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
