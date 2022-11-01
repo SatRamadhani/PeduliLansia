@@ -27,7 +27,14 @@ public class MainActivity extends AppCompatActivity
         }
         else if(user.equals("relative"))
         {
-            transaction.add(R.id.main, new RelativeDashboardFragment());
+            if(preferences.getString("status", "safe").equals("safe"))
+            {
+                transaction.add(R.id.main, new RelativeDashboardFragment());
+            }
+            else
+            {
+                transaction.add(R.id.main, new RelativeRedDashboardFragment());
+            }
         }
         else
         {

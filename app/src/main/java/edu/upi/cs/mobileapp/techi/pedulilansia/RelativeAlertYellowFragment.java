@@ -1,6 +1,8 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -28,6 +30,7 @@ public class RelativeAlertYellowFragment extends Fragment
     private AnimatedVectorDrawable avd;
 
     private FragmentRelativeAlertYellowBinding binding;
+    private SharedPreferences preferences;
 
     public RelativeAlertYellowFragment()
     {
@@ -45,6 +48,17 @@ public class RelativeAlertYellowFragment extends Fragment
 
         return fragment;
     } */
+
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        preferences = getActivity().getSharedPreferences(
+                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("status", "danger").commit();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,10 +92,11 @@ public class RelativeAlertYellowFragment extends Fragment
             }
         }, 250);
 
+
         handler.postDelayed(() ->
         {
             startActivity(new Intent(getActivity(), RelativeMapsActivity.class));
             getActivity().finish();
-        }, 3000);
+        }, 2750);
     }
 }
