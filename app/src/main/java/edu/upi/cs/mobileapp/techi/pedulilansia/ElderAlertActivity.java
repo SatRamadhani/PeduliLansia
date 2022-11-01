@@ -1,19 +1,18 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 
-public class SplashScreenActivity extends AppCompatActivity
-{
+public class ElderAlertActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_elder_alert);
 
         // Hide the bottom navigation bar.
         View view = getWindow().getDecorView();
@@ -24,14 +23,9 @@ public class SplashScreenActivity extends AppCompatActivity
                 View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        // Set content view.
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_elder_alert);
 
-        new Handler().postDelayed(() ->
-        {
-            // Start MainActivity.
-            startActivity(new Intent(SplashScreenActivity.this, WelcomeActivity.class));
-            finish();
-        }, 3000);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.elderalert, new ElderStatusSOSFragment()).commit();
     }
 }

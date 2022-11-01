@@ -4,15 +4,16 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeRedAlertBinding;
+import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeAlertRedBinding;
 
-public class RelativeRedAlertFragment extends Fragment
+public class RelativeAlertRedFragment extends Fragment implements View.OnClickListener
 {
     /* private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -20,9 +21,12 @@ public class RelativeRedAlertFragment extends Fragment
     private String mParam1;
     private String mParam2; */
 
-    private FragmentRelativeRedAlertBinding binding;
+    private FragmentRelativeAlertRedBinding binding;
+    private FragmentTransaction transaction;
 
-    public RelativeRedAlertFragment()
+    private CountDownTimer countdown;
+
+    public RelativeAlertRedFragment()
     {
         // Required empty public constructor
     }
@@ -42,7 +46,7 @@ public class RelativeRedAlertFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        binding = FragmentRelativeRedAlertBinding.inflate(inflater, container, false);
+        binding = FragmentRelativeAlertRedBinding.inflate(inflater, container, false);
 
         // Inflate the layout for this fragment
         return binding.getRoot();
@@ -53,18 +57,39 @@ public class RelativeRedAlertFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
 
-        new CountDownTimer(60000, 1000)
+        binding.btnRelativeAlertAccept.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                countdown.cancel();
+
+                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.add(R.id.relative_alert, new RelativeAlertYellowFragment()).commit();
+            }
+        });
+
+        binding.btnRelativeAlertDecline.setOnClickListener(this);
+
+        countdown = new CountDownTimer(10000, 1000)
         {
             public void onTick(long millisUntilFinished)
             {
-                binding.relativeTxtAlertCountdown.setText("Mengabaikan peringatan dalam " +
-                        (millisUntilFinished / 1000) + " detik...");
+                binding.relativeTxtAlertCountdown.setText("Mengabaikan peringatan\n" +
+                        "dalam " + (millisUntilFinished / 1000) + " detik...");
             }
 
             public void onFinish()
             {
-
+                onClick(view);
             }
         }.start();
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        countdown.cancel();
+        getActivity().finish();
     }
 }

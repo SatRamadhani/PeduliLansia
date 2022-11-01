@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/elderstatussafe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RelativeRedAlertFragment"
+    tools:context=".RelativeAlertRedFragment"
     tools:layout_editor_absoluteX="-41dp"
     tools:layout_editor_absoluteY="-19dp">
 
@@ -81,14 +81,14 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/txt_elder_sos_info"
+        android:id="@+id/txt_elder_sos_countdown"
         android:layout_width="272dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
-        android:text="Mengirim pesan otomatis dalam 3 detik.."
+        android:text="Mengirim pesan otomatis\ndalam 3 detik.."
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -99,7 +99,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
 
-        android:id="@+id/btn_elder_sos_confirm"
+        android:id="@+id/btn_elder_sos_decline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbuttonsos"
@@ -109,7 +109,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_elder_sos_info"
+        app:layout_constraintTop_toBottomOf="@+id/txt_elder_sos_countdown"
         tools:ignore="MissingConstraints" />
 
 

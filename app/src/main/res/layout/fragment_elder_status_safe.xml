@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/elderstatussafe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RelativeRedAlertFragment"
+    tools:context=".ElderStatusSafeFragment"
     tools:layout_editor_absoluteX="-41dp"
     tools:layout_editor_absoluteY="-19dp">
 
@@ -27,7 +27,7 @@
 
 
     <ImageButton
-        android:id="@+id/btn_elder_safe_menu"
+        android:id="@+id/elder_btn_safe_menu"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/roundcorner"
@@ -137,23 +137,20 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-
-    <Button
-        android:id="@+id/btn_elder_safe_safe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/roundedbuttonsos"
-        android:text="Tekan Jika Bahaya"
-        android:textColor="@color/white"
+    <com.ncorti.slidetoact.SlideToActView
+        android:id="@+id/elder_safe_slide"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:elevation="10dp"
+        app:icon_margin="8dp"
+        app:inner_color="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_elder_safe_age"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/txt_elder_safe_age"
+        app:outer_color="@color/primary_green"
+        app:text="Geser jika dalam bahaya."
+        app:text_style="bold" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

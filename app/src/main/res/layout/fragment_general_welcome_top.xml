@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".GeneralWelcomeTopFragment">
 
-    <edu.upi.cs.mobileapp.techi.library.MultiWaveHeader
+    <edu.upi.cs.mobileapp.techi.wave.MultiWaveHeader
         android:id="@+id/multiWaveHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,9 +20,9 @@
         app:mwhEnableFullScreen="true"
         app:mwhProgress="0.25"
         app:mwhStartColor="@color/primary_green"
-        app:mwhWaves="PairWave">
+        app:mwhWaves="MultiWave">
 
-    </edu.upi.cs.mobileapp.techi.library.MultiWaveHeader>
+    </edu.upi.cs.mobileapp.techi.wave.MultiWaveHeader>
 
 <!--    <ImageView-->
 <!--        android:id="@+id/header"-->

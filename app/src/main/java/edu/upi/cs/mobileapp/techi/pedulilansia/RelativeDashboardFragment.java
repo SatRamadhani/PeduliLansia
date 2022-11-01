@@ -1,5 +1,7 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +26,7 @@ public class RelativeDashboardFragment extends Fragment
 
     private FragmentRelativeDashboardBinding binding;
     private FragmentTransaction transaction;
+    private SharedPreferences preferences;
 
     public RelativeDashboardFragment()
     {
@@ -41,6 +44,17 @@ public class RelativeDashboardFragment extends Fragment
 
         return fragment;
     } */
+
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        preferences = getActivity().getSharedPreferences(
+                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("page", "relative_dashboard").commit();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

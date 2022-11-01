@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
         String user = preferences.getString("role", null);
         if(user.equals("elder"))
         {
-            transaction.add(R.id.main, new ElderStatusDangerFragment());
+            transaction.add(R.id.main, new ElderStatusSafeFragment());
         }
         else if(user.equals("relative"))
         {

@@ -78,14 +78,13 @@
             android:id="@+id/relative_menu_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Dashboard"
-            android:textColor="@color/primary_green"
-            android:textSize="20sp"
             android:layout_marginVertical="8dp"
-            android:drawableStart="@drawable/menu_selector"
+            android:drawableStart="@drawable/menu_selector_none"
             android:drawablePadding="12dp"
-            android:gravity="center_vertical"/>
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:text="Dashboard"
+            android:textSize="20sp" />
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
@@ -122,18 +121,19 @@
             android:layout_width="wrap_content"
             android:layout_height="2dp"
             android:background="@color/grey_50"/>
+
         <TextView
             android:id="@+id/relative_menu_referensi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Referensi"
-            android:textColor="@color/black_secondary"
-            android:textSize="20sp"
             android:layout_marginVertical="8dp"
             android:drawableStart="@drawable/menu_selector_none"
             android:drawablePadding="12dp"
-            android:gravity="center_vertical"/>
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:text="Preferensi"
+            android:textColor="@color/black_secondary"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/relative_menu_btn_debug_danger"

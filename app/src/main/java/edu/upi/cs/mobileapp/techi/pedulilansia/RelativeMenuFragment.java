@@ -1,9 +1,13 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -23,6 +27,7 @@ public class RelativeMenuFragment extends Fragment
     private String mParam2; */
 
     private FragmentRelativeMenuBinding binding;
+    private SharedPreferences preferences;
 
     public RelativeMenuFragment()
     {
@@ -40,6 +45,14 @@ public class RelativeMenuFragment extends Fragment
     } */
 
     @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        preferences = getActivity().getSharedPreferences(
+                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
@@ -53,6 +66,7 @@ public class RelativeMenuFragment extends Fragment
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+        setSelectedTabAttributes();
 
         binding.relativeMenuBtnDebugDanger.setOnClickListener(new View.OnClickListener()
         {
@@ -71,5 +85,19 @@ public class RelativeMenuFragment extends Fragment
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
+    }
+
+    private void setSelectedTabAttributes()
+    {
+        int color = ContextCompat.getColor(getContext(), R.color.primary_green);
+        Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.menu_selector);
+
+        String page = preferences.getString("page", null);
+        if(page.equals("relative_dashboard"))
+        {
+            binding.relativeMenuDashboard.setTextColor(color);
+            binding.relativeMenuDashboard.setCompoundDrawablesWithIntrinsicBounds(drawable, null,
+                    null, null);
+        }
     }
 }

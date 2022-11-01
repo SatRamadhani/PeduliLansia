@@ -79,12 +79,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:drawableStart="@drawable/menu_selector"
+            android:drawableStart="@drawable/menu_selector_none"
             android:drawablePadding="12dp"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins"
             android:gravity="center_vertical"
             android:text="Dashboard"
-            android:textColor="@color/primary_green"
+            android:textColor="@color/black_secondary"
             android:textSize="24sp" />
 
         <View

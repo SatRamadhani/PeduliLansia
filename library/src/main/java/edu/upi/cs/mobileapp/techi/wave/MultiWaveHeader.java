@@ -1,4 +1,4 @@
-package edu.upi.cs.mobileapp.techi.library;
+package edu.upi.cs.mobileapp.techi.wave;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

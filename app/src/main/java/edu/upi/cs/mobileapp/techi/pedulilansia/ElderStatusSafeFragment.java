@@ -1,64 +1,100 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ElderStatusSafeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ElderStatusSafeFragment extends Fragment {
+import com.ncorti.slidetoact.SlideToActView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
+import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentElderStatusSafeBinding;
+
+public class ElderStatusSafeFragment extends Fragment
+{
+    /* private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
+    private String mParam2; */
 
-    public ElderStatusSafeFragment() {
+    private FragmentElderStatusSafeBinding binding;
+    private FragmentTransaction transaction;
+    private SharedPreferences preferences;
+
+    public ElderStatusSafeFragment()
+    {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ElderStatusSafeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ElderStatusSafeFragment newInstance(String param1, String param2) {
+    /* public static ElderStatusSafeFragment newInstance(String param1, String param2)
+    {
         ElderStatusSafeFragment fragment = new ElderStatusSafeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
+    } */
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        preferences = getActivity().getSharedPreferences(
+                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("page", "elder_dashboard").commit();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
+        binding = FragmentElderStatusSafeBinding.inflate(inflater, container, false);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_elder_status_safe, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
+    {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.txtElderSafeName.setText(preferences.getString("gender", "") + " " + preferences.getString("name", " "));
+
+        binding.elderBtnSafeMenu.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true).addToBackStack(null);
+                transaction.add(R.id.main, new ElderMenuFragment()).commit();
+            }
+        });
+
+        binding.elderSafeSlide.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener()
+        {
+            @Override
+            public void onSlideComplete(@NonNull SlideToActView slideToActView)
+            {
+                startActivity(new Intent(getActivity(), ElderAlertActivity.class));
+                new Handler().postDelayed(() ->
+                {
+                    binding.elderSafeSlide.setCompleted(false, false);
+                }, 500);
+            }
+        });
     }
 }

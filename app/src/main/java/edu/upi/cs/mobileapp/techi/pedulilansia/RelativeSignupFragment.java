@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeSignupBinding;
 
@@ -23,6 +24,7 @@ public class RelativeSignupFragment extends Fragment
     private String mParam2; */
 
     private FragmentRelativeSignupBinding binding;
+    private FragmentTransaction transaction;
     private SharedPreferences preferences;
 
     public RelativeSignupFragment()
@@ -42,13 +44,18 @@ public class RelativeSignupFragment extends Fragment
     } */
 
     @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        preferences = getActivity().getSharedPreferences(
+                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
         binding = FragmentRelativeSignupBinding.inflate(inflater, container, false);
-        preferences = getActivity().getSharedPreferences(
-                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
-
         return binding.getRoot();
     }
 
@@ -58,7 +65,6 @@ public class RelativeSignupFragment extends Fragment
         super.onViewCreated(view, savedInstanceState);
 
         // Set onClickListener Relative Sign-Up Button.
-        // Button signup = (Button) getView().findViewById(R.id.relative_btn_signup);
         binding.relativeBtnSignup.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -69,6 +75,17 @@ public class RelativeSignupFragment extends Fragment
 
                 startActivity(new Intent(getActivity(), MainActivity.class));
                 getActivity().finish();
+            }
+        });
+
+        binding.relativeTxtAltTextLogin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true);
+                transaction.replace(R.id.signup, new RelativeLoginFragment()).commit();
             }
         });
     }

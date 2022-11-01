@@ -1,6 +1,7 @@
 package edu.upi.cs.mobileapp.techi.pedulilansia;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
@@ -16,8 +17,10 @@ import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.ActivityRelativeMapsB
 public class RelativeMapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
 
-    private GoogleMap mMap;
     private ActivityRelativeMapsBinding binding;
+    private FragmentTransaction transaction;
+
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,24 +34,18 @@ public class RelativeMapsActivity extends FragmentActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.map, new RelativeMapsButtonFragment()).commit();
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
+        // Add a marker in UPI and move the camera.
+        LatLng sydney = new LatLng(-6.859870494855354, 107.59378225116951);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
