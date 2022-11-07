@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativepreference"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativePreferenceFragment">
+
+    <!-- Guide Line -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <!-- End of Guide Line -->
+
+    <LinearLayout
+        android:id="@+id/relative_preference_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="29dp"
+        android:paddingVertical="30dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinetop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <ImageView
+            android:id="@+id/relative_preference_logo"
+            android:layout_width="126dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitStart"
+            android:src="@drawable/pedulilansia"/>
+
+        <TextView
+            android:id="@+id/relative_preference_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="| Preferensi"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="20sp"
+            android:textColor="@color/primary_green"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/relative_preference_menuIcon"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_icon"
+            android:background="@drawable/menu_bg"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:paddingTop="22dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+        app:layout_constraintVertical_bias="0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Tulis Panduan"
+            android:textColor="@color/black_secondary"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/grey_50" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Langkah Lanjut"
+            android:textColor="@color/black_secondary"
+            android:textSize="22sp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Atur tindakan ketika tidak ada kerabat yang dapat menolong"
+            android:textColor="@color/black_secondary"
+            android:textSize="16sp"/>
+
+        <RadioGroup
+            android:id="@+id/elder_input_signup_radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/maleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/grey"
+                android:fontFamily="@font/poppins"
+                android:text="Nomor Darurat"
+                android:textSize="16sp"
+                android:layout_marginEnd="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/femaleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/grey"
+                android:fontFamily="@font/poppins"
+                android:text="Orang asing"
+                android:textSize="16sp"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Syarat &amp; Ketentuan"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:buttonTint="@color/grey"
+            android:layout_marginTop="-10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <EditText
+               android:id="@+id/relative_preference_inputNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_input_no"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="Masukan Nomor Darurat"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:theme="@style/TextLabel" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins"
+                android:background="@drawable/half_right_rounded"
+                android:backgroundTint="@color/primary_green"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="15.3dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

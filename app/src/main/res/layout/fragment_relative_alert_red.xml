@@ -26,8 +26,7 @@
         android:backgroundTint="@color/white"
         android:elevation="10dp"
         android:fontFamily="@font/poppins"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:padding="17dp"
         android:text="Saya akan membantunya."
         android:textAllCaps="false"
         android:textColor="@color/red"
@@ -46,16 +45,17 @@
         android:backgroundTint="@color/black_secondary"
         android:elevation="10dp"
         android:fontFamily="@font/poppins"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:paddingHorizontal="16dp"
+
         android:text="Saya tidak bisa."
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_relative_alert_accept"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <ImageView
         android:id="@+id/img_relative_alert_logo"
@@ -105,7 +105,9 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_relative_alert_decline" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_relative_alert_decline"
+        app:layout_constraintVertical_bias="0.564" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

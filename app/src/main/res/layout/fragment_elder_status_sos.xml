@@ -10,19 +10,72 @@
     tools:layout_editor_absoluteX="-41dp"
     tools:layout_editor_absoluteY="-19dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Guide Line -->
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinemenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.111" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:barrierMargin="54dp"
+        app:constraint_referenced_ids="txt_elder_sos_desc" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:barrierMargin="52dp"
+        app:constraint_referenced_ids="img_elder_sos_circles" />
+
+    <!-- End of Guide Line -->
 
     <ImageView
         android:id="@+id/img_elder_sos_logo"
         android:layout_width="139dp"
         android:layout_height="26dp"
         android:src="@drawable/pedulilansiared"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinemenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"/>
 
     <ImageButton
         android:id="@+id/img_elder_sos_circles"
@@ -36,7 +89,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.5" />
 
 
     <TextView
@@ -47,37 +100,41 @@
         android:text="SOS"
         android:textColor="@color/red"
         android:textSize="90dp"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:flow_verticalAlign="center"
         app:layout_constraintBottom_toBottomOf="@+id/img_elder_sos_circles"
         app:layout_constraintEnd_toEndOf="@+id/img_elder_sos_circles"
         app:layout_constraintStart_toStartOf="@+id/img_elder_sos_circles"
-        app:layout_constraintTop_toTopOf="@+id/img_elder_sos_circles"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/img_elder_sos_circles" />
 
     <ImageView
         android:id="@+id/img_elder_sos_fallicon"
         android:layout_width="144dp"
         android:layout_height="137dp"
         android:src="@drawable/fall_icon_status_danger"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintBottom_toBottomOf="@+id/barrier_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_top"
+        app:layout_constraintVertical_bias="1" />
 
     <TextView
         android:id="@+id/txt_elder_sos_desc"
         android:layout_width="295dp"
         android:layout_height="74dp"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
-        android:text="Nampaknya Anda telah terjatuh!"
-        android:textColor="@color/black"
-        android:textSize="22sp"
+        android:text="Nampaknya Anda telah \ terjatuh!"
+        android:textColor="@color/black_secondary"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/img_elder_sos_circles"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_elder_sos_logo"
-        app:layout_constraintVertical_bias="0.196"
+        app:layout_constraintTop_toTopOf="@+id/guidelinemenu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.2"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -94,7 +151,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_elder_sos_circles"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.086"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -103,14 +160,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbuttonsos"
+        android:padding="20dp"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"
         android:text="Saya baik-baik saja"
+        android:textSize="20sp"
         android:textColor="@color/white"
-        android:padding="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_elder_sos_countdown"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.7"/>
 
 
 

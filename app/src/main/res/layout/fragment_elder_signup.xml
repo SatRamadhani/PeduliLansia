@@ -115,9 +115,7 @@
                 android:fontFamily="@font/poppins"
                 android:text="Laki-laki"
                 android:textSize="15sp"
-                tools:ignore="TouchTargetSizeCheck"
-                tools:layout_editor_absoluteX="103dp"
-                tools:layout_editor_absoluteY="222dp" />
+                tools:ignore="TouchTargetSizeCheck"/>
 
             <RadioButton
                 android:id="@+id/femaleRadio"
@@ -128,9 +126,7 @@
                 android:fontFamily="@font/poppins"
                 android:text="Perempuan"
                 android:textSize="15sp"
-                tools:ignore="TouchTargetSizeCheck"
-                tools:layout_editor_absoluteX="103dp"
-                tools:layout_editor_absoluteY="222dp" />
+                tools:ignore="TouchTargetSizeCheck"/>
         </RadioGroup>
 
     </com.google.android.material.textfield.TextInputLayout>
