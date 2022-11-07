@@ -69,7 +69,8 @@ public class RelativeLoginFragment extends Fragment
             public void onClick(View view)
             {
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("role", "relative").commit();
+                editor.putString("role", "relative")
+                        .putString("status", "safe").commit();;
 
                 startActivity(new Intent(getActivity(), MainActivity.class));
                 getActivity().finish();
