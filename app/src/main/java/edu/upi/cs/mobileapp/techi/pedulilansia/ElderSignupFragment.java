@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class ElderSignupFragment extends Fragment implements DatePickerDialog.On
     private SharedPreferences preferences;
 
     private Calendar calendar;
+    private DialogFragment dialog = new GeneralDatePickerFragment();
 
     public ElderSignupFragment()
     {
@@ -75,7 +77,6 @@ public class ElderSignupFragment extends Fragment implements DatePickerDialog.On
         super.onViewCreated(view, savedInstanceState);
 
         // Set onClickListener Date Picker.
-        DialogFragment dialog = new GeneralDatePickerFragment();
         binding.elderInputSignupBirthdate.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -139,5 +140,6 @@ public class ElderSignupFragment extends Fragment implements DatePickerDialog.On
         Snackbar snackbar = Snackbar.make(getView(), "Masuk kok!",
                 Snackbar.LENGTH_LONG);
         snackbar.show();
+        Log.i("ElderSignupFragment", "onDateSet: working");
     }
 }

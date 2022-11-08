@@ -30,7 +30,6 @@ public class RelativeAlertYellowFragment extends Fragment
     private AnimatedVectorDrawable avd;
 
     private FragmentRelativeAlertYellowBinding binding;
-    private SharedPreferences preferences;
 
     public RelativeAlertYellowFragment()
     {
@@ -48,17 +47,6 @@ public class RelativeAlertYellowFragment extends Fragment
 
         return fragment;
     } */
-
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        preferences = getActivity().getSharedPreferences(
-                "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("status", "danger").commit();
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

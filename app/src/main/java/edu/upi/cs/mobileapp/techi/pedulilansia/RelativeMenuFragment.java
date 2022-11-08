@@ -71,14 +71,29 @@ public class RelativeMenuFragment extends Fragment
         super.onViewCreated(view, savedInstanceState);
         setSelectedTabAttributes();
 
+        binding.relativeMenuReferensi.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                getActivity().getSupportFragmentManager().popBackStack();
+
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true).addToBackStack(null);
+                transaction.replace(R.id.main, new RelativePreferenceFragment()).commit();
+            }
+        });
+
         binding.relativeMenuBtnDebugDanger.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("status", "danger").commit();
+
                 transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.main, new RelativeRedDashboardFragment()).commit();
-
                 startActivity(new Intent(getActivity(), RelativeAlertActivity.class));
             }
         });
@@ -95,14 +110,28 @@ public class RelativeMenuFragment extends Fragment
 
     private void setSelectedTabAttributes()
     {
-        int color = ContextCompat.getColor(getContext(), R.color.primary_green);
-        Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.menu_selector);
+        int color;
 
-        String page = preferences.getString("page", null);
-        if(page.equals("relative_dashboard"))
+        if(preferences.getString("status", "safe").equals("safe"))
+        {
+            color = ContextCompat.getColor(getContext(), R.color.primary_green);
+        }
+        else
+        {
+            color = ContextCompat.getColor(getContext(), R.color.red);
+        }
+
+        Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.menu_selector);
+        if(preferences.getString("page", null).equals("relative_dashboard"))
         {
             binding.relativeMenuDashboard.setTextColor(color);
             binding.relativeMenuDashboard.setCompoundDrawablesWithIntrinsicBounds(drawable, null,
+                    null, null);
+        }
+        else if(preferences.getString("page", null).equals("relative_preference"))
+        {
+            binding.relativeMenuReferensi.setTextColor(color);
+            binding.relativeMenuReferensi.setCompoundDrawablesWithIntrinsicBounds(drawable, null,
                     null, null);
         }
     }

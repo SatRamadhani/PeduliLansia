@@ -13,6 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.snackbar.Snackbar;
+
 import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeSignupBinding;
 
 public class RelativeSignupFragment extends Fragment
@@ -26,6 +32,9 @@ public class RelativeSignupFragment extends Fragment
     private FragmentRelativeSignupBinding binding;
     private FragmentTransaction transaction;
     private SharedPreferences preferences;
+
+    private GoogleSignInOptions gsio;
+    private GoogleSignInClient gsic;
 
     public RelativeSignupFragment()
     {
@@ -49,6 +58,18 @@ public class RelativeSignupFragment extends Fragment
         super.onCreate(savedInstanceState);
         preferences = getActivity().getSharedPreferences(
                 "edu.upi.cs.mobileapp.techi.pedulilansia.user", Context.MODE_PRIVATE);
+
+        gsio = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail().build();
+        gsic = GoogleSignIn.getClient(getContext(), gsio);
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+
+        GoogleSignInAccount gsia = GoogleSignIn.getLastSignedInAccount(getContext());
     }
 
     @Override
@@ -64,18 +85,51 @@ public class RelativeSignupFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.relativeSignupGoogle.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = gsic.getSignInIntent();
+                startActivityForResult(intent, 1);
+            }
+        });
+
         // Set onClickListener Relative Sign-Up Button.
         binding.relativeBtnSignup.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("role", "relative")
-                        .putString("status", "safe").commit();
+                if(binding.relativeInputSignupNama.getText().toString().isEmpty())
+                {
+                    Snackbar snackbar = Snackbar.make(getView(), "Mohon isi nama Anda!",
+                            Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else if(binding.relativeInputSignupEmail.getText().toString().isEmpty())
+                {
+                    Snackbar snackbar = Snackbar.make(getView(), "Mohon isi email Anda!",
+                            Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else if(binding.relativeInputSignupPassword.getText().toString().isEmpty())
+                {
+                    Snackbar snackbar = Snackbar.make(getView(), "Mohon isi password Anda!",
+                            Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else
+                {
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("role", "relative")
+                            .putString("status", "safe").commit();
 
-                startActivity(new Intent(getActivity(), MainActivity.class));
-                getActivity().finish();
+                    startActivity(new Intent(getActivity(), MainActivity.class));
+                    getActivity().finish();
+
+                }
+
             }
         });
 

@@ -64,7 +64,8 @@ public class RelativeAlertRedFragment extends Fragment implements View.OnClickLi
             {
                 countdown.cancel();
 
-                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.slide_left, R.anim.fade_out);
                 transaction.add(R.id.relative_alert, new RelativeAlertYellowFragment()).commit();
             }
         });

@@ -44,4 +44,16 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
         setContentView(R.layout.activity_main);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        if(getSupportFragmentManager().getBackStackEntryCount() >= 1)
+        {
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("page", "relative_dashboard").commit();
+        }
+
+        super.onBackPressed();
+    }
 }

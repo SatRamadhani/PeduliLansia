@@ -81,5 +81,17 @@ public class RelativeDashboardFragment extends Fragment
                 transaction.add(R.id.main, new RelativeMenuFragment()).commit();
             }
         });
+
+        binding.relativeDashboardScheduleTitleAllIcon.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.slide_up, R.anim.fade_out, R.anim.fade_in,
+                                R.anim.slide_down).setReorderingAllowed(true).addToBackStack(null);
+                transaction.add(R.id.main, new RelativeScheduleFragment()).commit();
+            }
+        });
     }
 }
