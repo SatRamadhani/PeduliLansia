@@ -83,8 +83,7 @@
         app:layout_constraintEnd_toEndOf="@id/guidelineend"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relative_input_signup_confpass"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toBottomOf="@+id/relative_input_signup_password" />
 
     <!-- End of Bubble -->
 
@@ -170,27 +169,9 @@
         app:layout_constraintTop_toBottomOf="@+id/relative_input_signup_email"
         app:layout_constraintVertical_bias="0.027" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/relative_input_signup_confpass"
-        android:theme="@style/TextLabel"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/password_icon_custom"
-        android:drawableEnd="@drawable/password_seen_icon"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Konfirmasi Kata Sandi"
-        android:inputType="textPassword"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinebottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/relative_input_signup_password"
-        app:layout_constraintVertical_bias="0.027" />
+    <!-- End of Input -->
+
+    <!-- Alternative Text Login-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/relative_btn_signup"
@@ -210,22 +191,56 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/relative_input_signup_confpass"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintTop_toBottomOf="@+id/relative_input_signup_password"
+        app:layout_constraintVertical_bias="0.038" />
 
-    <!-- End of Input -->
+    <!-- Google -->
 
-    <!-- Alternative Text Login-->
+    <TextView
+        android:id="@+id/relative_signup_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="atau"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toTopOf="@+id/relative_btn_signup"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:id="@+id/relative_signup_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_stroke"
+        android:drawableStart="@drawable/google_icon"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:text="Google"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/relative_signup_or"
+        app:layout_constraintVertical_bias="0" />
+
+    <!-- End of Google -->
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/relative_btn_signup"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintHorizontal_bias="0.5">
+        app:layout_constraintTop_toBottomOf="@+id/relative_signup_google"
+        app:layout_constraintVertical_bias="1">
 
         <TextView
             android:id="@+id/relative_txt_altText"
@@ -233,13 +248,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
             android:text="Sudah mempunyai akun?"
-            android:textColor="@color/black_secondary"
-            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-            app:layout_constraintHorizontal_bias="0.304"
-            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton"
-            app:layout_constraintVertical_bias="1.0" />
+            android:textColor="@color/black_secondary" />
 
         <TextView
             android:id="@+id/relative_txt_altTextLogin"
@@ -248,12 +257,7 @@
             android:layout_marginStart="182dp"
             android:fontFamily="@font/poppins_semibold"
             android:text=" Masuk!"
-            android:textColor="@color/primary_green"
-            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-            app:layout_constraintStart_toEndOf="@+id/relative_txt_altText"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton"
-            app:layout_constraintVertical_bias="1.0" />
+            android:textColor="@color/primary_green" />
     </FrameLayout>
 
     <!-- End of Alternative Text Sign Up-->

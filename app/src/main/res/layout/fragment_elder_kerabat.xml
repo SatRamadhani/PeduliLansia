@@ -24,7 +24,7 @@
             android:layout_width="1dp"
             android:layout_height="24dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_back_btn_green" />
+            app:srcCompat="@drawable/back_icon_green" />
 
         <ImageView
             android:id="@+id/elder_menu_logo"
@@ -48,18 +48,19 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="828dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/elder_menu_bar_layout"
-        tools:layout_editor_absoluteX="-1dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/elder_menu_bar_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="30dp"
             android:orientation="horizontal">
 
@@ -230,7 +231,6 @@
                 android:textColor="@color/black" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>
