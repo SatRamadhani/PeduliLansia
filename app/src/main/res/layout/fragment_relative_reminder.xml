@@ -4,40 +4,331 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_green" />
+    android:background="@color/primary_green">
 
-    <!--
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="408dp"
-            android:layout_height="49dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="-1dp">
+    <!-- Guide Lines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="46dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="46dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="46dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="46dp" />
+
+    <!-- End of Guide Line -->
+
+    <LinearLayout
+        android:id="@+id/relative_reminder_title_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+        app:layout_constraintVertical_bias="0">
+
+        <ImageView
+            android:id="@+id/relative_reminder_title_backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/arrow_circle_left_icon" />
+
+        <TextView
+            android:id="@+id/relative_reminder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Buat Pengingat Baru"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relative_reminder_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="45dp"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_title_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/_reminder_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input_white"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Nama"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp"
+            android:theme="@style/TextLabel" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/relative_reminder_type_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.1"
+        android:text="Jenis Pengingat"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_name_layout"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <LinearLayout
+        android:id="@+id/relative_reminder_type_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_type_title"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintHorizontal_bias="0">
+
+        <TextView
+            android:id="@+id/relative_reminder_type_obat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/rounded"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="3dp"
+            android:text="Obat"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/relative_reminder_type_checkUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/rounded"
+            android:backgroundTint="@color/yellow"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="3dp"
+            android:text="Check up"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/relative_reminder_type_etc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="3dp"
+            android:text="Lain-lain"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/relative_reminder_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="0.1"
+        android:text="Detail Pengingat"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_type_layout"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0.05"/>
+
+    <LinearLayout
+        android:id="@+id/relative_reminder_time_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="45dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_detail_title"
+        app:layout_constraintVertical_bias="0.05">
+
+        <TextView
+            android:id="@+id/relative_reminder_time"
+            android:drawableStart="@drawable/time_icon"
+            android:drawablePadding="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="07:00 AM - 08:00 AM"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="14sp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/relative_reminder_date"
+            android:layout_marginTop="-5dp"
+            android:paddingStart="36dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selasa, 29 November 2022"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:id="@+id/relative_reminder_user_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingStart="36dp"
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/btn_back2"
-                android:layout_width="27dp"
-                android:layout_height="27dp"
-                android:rotation="180"
-                app:srcCompat="@drawable/"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="13dp" />
+                android:id="@+id/relative_reminder_addUser"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded50"
+                android:src="@drawable/adduser_icon" />
+        </LinearLayout>
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Buat Pengingat Baru"
-                android:textColor="@color/white"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="16dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/relative_reminder_location_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="45dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_time_layout">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="410dp"
-            android:layout_height="114dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="50dp">
+        <TextView
+            android:id="@+id/relative_reminder_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/mappin_icon"
+            android:drawablePadding="12sp"
+            android:fontFamily="@font/poppins"
+            android:text="Tambahkan Lokasi"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:gravity="center"/>
+    </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <LinearLayout
+        android:id="@+id/relative_reminder_description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="45dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_location_layout">
+
+        <TextView
+            android:id="@+id/relative_reminder_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/desc_icon"
+            android:drawablePadding="12sp"
+            android:fontFamily="@font/poppins"
+            android:text="Tambahkan Deskripsi"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relative_reminder_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="60dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_reminder_description_layout">
+
+        <TextView
+            android:id="@+id/relative_reminder_button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="Simpan"
+            android:textColor="@color/primary_green"
+            android:textSize="24sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/relative_reminder_button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="Batal"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:gravity="center"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,7 +47,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelinetop"
         app:layout_constraintVertical_bias="0">
