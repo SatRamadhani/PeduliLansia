@@ -5,6 +5,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -18,7 +21,6 @@ public class MainActivity extends AppCompatActivity
         preferences = getSharedPreferences("edu.upi.cs.mobileapp.techi.pedulilansia.user",
                 MODE_PRIVATE);
         transaction = getSupportFragmentManager().beginTransaction();
-
 
         String user = preferences.getString("role", null);
         if(user.equals("elder"))
@@ -55,5 +57,11 @@ public class MainActivity extends AppCompatActivity
         }
 
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
     }
 }

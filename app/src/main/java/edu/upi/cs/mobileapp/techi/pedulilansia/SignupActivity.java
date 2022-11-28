@@ -11,6 +11,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 
 public class SignupActivity extends AppCompatActivity
 {
@@ -59,24 +60,18 @@ public class SignupActivity extends AppCompatActivity
             // The Task returned from this call is always completed, no need to attach
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
-        }
-    }
-
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
-    {
-        try
-        {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
-            // Signed in successfully, show authenticated UI.
-//            updateUI(account);
-        }
-        catch(ApiException e)
-        {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w("failed", "signInResult:failed code=" + e.getStatusCode());
+            try
+            {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.i("success", "signInResult:success");
+                // Signed in successfully, show authenticated UI.
+            }
+            catch(ApiException e)
+            {
+                // The ApiException status code indicates the detailed failure reason.
+                // Please refer to the GoogleSignInStatusCodes class reference for more information.
+                Log.w("failed", "signInResult:failed code=" + e.getStatusCode());
+            }
         }
     }
 }

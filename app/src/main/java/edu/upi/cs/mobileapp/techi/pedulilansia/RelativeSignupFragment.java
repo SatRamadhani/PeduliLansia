@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.snackbar.Snackbar;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeSignupBinding;
 
 public class RelativeSignupFragment extends Fragment
@@ -101,19 +109,23 @@ public class RelativeSignupFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                if(binding.relativeInputSignupNama.getText().toString().isEmpty())
+                String email = binding.relativeInputSignupEmail.getText().toString();
+                String name = binding.relativeInputSignupNama.getText().toString();
+                String pass = binding.relativeInputSignupPassword.getText().toString();
+
+                if(name.isEmpty())
                 {
                     Snackbar snackbar = Snackbar.make(getView(), "Mohon isi nama Anda!",
                             Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
-                else if(binding.relativeInputSignupEmail.getText().toString().isEmpty())
+                else if(email.isEmpty())
                 {
                     Snackbar snackbar = Snackbar.make(getView(), "Mohon isi email Anda!",
                             Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
-                else if(binding.relativeInputSignupPassword.getText().toString().isEmpty())
+                else if(pass.isEmpty())
                 {
                     Snackbar snackbar = Snackbar.make(getView(), "Mohon isi password Anda!",
                             Snackbar.LENGTH_LONG);
@@ -121,13 +133,22 @@ public class RelativeSignupFragment extends Fragment
                 }
                 else
                 {
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("role", "relative")
-                            .putString("status", "safe").commit();
+//                    int status = requestSignUp(email, name, pass);
+//                    if(status == 0)
+//                    {
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("role", "relative")
+                                .putString("status", "safe").commit();
 
-                    startActivity(new Intent(getActivity(), MainActivity.class));
-                    getActivity().finish();
-
+                        startActivity(new Intent(getActivity(), MainActivity.class));
+                        getActivity().finish();
+//                    }
+//                    else
+//                    {
+//                        Snackbar snackbar = Snackbar.make(getView(), "Email sudah terdaftar, " +
+//                                        "login untuk melanjutkan!", Snackbar.LENGTH_LONG);
+//                        snackbar.show();
+//                    }
                 }
 
             }
@@ -143,5 +164,44 @@ public class RelativeSignupFragment extends Fragment
                 transaction.replace(R.id.signup, new RelativeLoginFragment()).commit();
             }
         });
+    }
+
+    private int requestSignUp(String email, String name, String password)
+    {
+        RequestParams params = new RequestParams();
+        params.put("method", "signup");
+        params.put("email", email);
+        params.put("name", name);
+        params.put("password", password);
+
+        final int[] status = new int[1];
+        status[0] = 1;
+
+        GeneralDBElder.post("relative.php", params, new JsonHttpResponseHandler()
+        {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response)
+            {
+                try
+                {
+                    status[0] = (int) response.get("status");
+                    Log.d("status", "Status di try : " + status[0]);
+                }
+                catch(JSONException e)
+                {
+                    Log.e("json", "Failed : Not a JSON.");
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response)
+            {
+
+            }
+        });
+
+        Log.i("status", "Status sebelum return : " + status[0]);
+        return status[0];
     }
 }

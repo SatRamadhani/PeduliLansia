@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class ElderMenuFragment extends Fragment
     private String mParam2; */
 
     private FragmentElderMenuBinding binding;
+    private FragmentTransaction transaction;
     private SharedPreferences preferences;
 
     public ElderMenuFragment()
@@ -64,6 +66,20 @@ public class ElderMenuFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
         setSelectedTabAttributes();
+
+        binding.elderMenuJadwal.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                getActivity().getSupportFragmentManager().popBackStack();
+
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.slide_up, R.anim.fade_out, R.anim.fade_in,
+                                R.anim.slide_down).setReorderingAllowed(true).addToBackStack(null);
+                transaction.replace(R.id.main, new ElderScheduleFragment()).commit();
+            }
+        });
 
         binding.elderMenuMenuIcon.setOnClickListener(new View.OnClickListener()
         {

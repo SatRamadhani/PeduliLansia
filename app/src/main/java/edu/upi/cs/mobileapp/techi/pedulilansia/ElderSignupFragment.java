@@ -37,7 +37,7 @@ public class ElderSignupFragment extends Fragment implements DatePickerDialog.On
     private SharedPreferences preferences;
 
     private Calendar calendar;
-    private DialogFragment dialog = new GeneralDatePickerFragment();
+    private DialogFragment dialog;
 
     public ElderSignupFragment()
     {
@@ -82,7 +82,9 @@ public class ElderSignupFragment extends Fragment implements DatePickerDialog.On
             @Override
             public void onClick(View view)
             {
+                dialog = new GeneralDatePickerFragment();
                 dialog.show(getActivity().getSupportFragmentManager(), "Tanggal");
+                Log.i("ElderSignupFragment", "done");
             }
         });
 

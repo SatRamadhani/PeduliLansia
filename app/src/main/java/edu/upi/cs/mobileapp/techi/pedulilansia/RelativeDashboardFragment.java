@@ -82,6 +82,18 @@ public class RelativeDashboardFragment extends Fragment
             }
         });
 
+        binding.relativeDashboardScheduleTitleAddIcon.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.slide_up, R.anim.fade_out, R.anim.fade_in,
+                                R.anim.slide_down).setReorderingAllowed(true).addToBackStack(null);
+                transaction.add(R.id.main, new RelativeReminderFragment()).commit();
+            }
+        });
+
         binding.relativeDashboardScheduleTitleAllIcon.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -4,15 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeScheduleBinding;
+import edu.upi.cs.mobileapp.techi.pedulilansia.databinding.FragmentRelativeReminderBinding;
 
-public class RelativeScheduleFragment extends Fragment
+public class RelativeReminderFragment extends Fragment
 {
     /* private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -20,22 +19,20 @@ public class RelativeScheduleFragment extends Fragment
     private String mParam1;
     private String mParam2; */
 
-    private FragmentRelativeScheduleBinding binding;
-    private FragmentTransaction transaction;
+    private FragmentRelativeReminderBinding binding;
 
-    public RelativeScheduleFragment()
+    public RelativeReminderFragment()
     {
         // Required empty public constructor
     }
 
-    /* public static RelativeScheduleFragment newInstance(String param1, String param2)
+    /* public static RelativeReminderFragment newInstance(String param1, String param2)
     {
-        RelativeScheduleFragment fragment = new RelativeScheduleFragment();
+        RelativeReminderFragment fragment = new RelativeReminderFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
-
         return fragment;
     } */
 
@@ -49,7 +46,7 @@ public class RelativeScheduleFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        binding = FragmentRelativeScheduleBinding.inflate(inflater, container, false);
+        binding = FragmentRelativeReminderBinding.inflate(inflater, container, false);
 
         // Inflate the layout for this fragment.
         return binding.getRoot();
@@ -60,7 +57,7 @@ public class RelativeScheduleFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.relativeScheduleTitleBackIcon.setOnClickListener(new View.OnClickListener()
+        binding.relativeReminderTitleBackIcon.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
