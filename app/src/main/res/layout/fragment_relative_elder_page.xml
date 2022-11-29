@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/elderrelativepage"
+    android:id="@+id/relativeelderpage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ElderRelativePageFragment">
+    tools:context=".RelativeElderPageFragment">
 
     <!-- Guide Line -->
     <androidx.constraintlayout.widget.Guideline
@@ -39,7 +39,7 @@
     <!-- End of Guide Line -->
 
     <LinearLayout
-        android:id="@+id/elder_menu_bar_layout"
+        android:id="@+id/relative_menu_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/elder_menu_logo"
+            android:id="@+id/relative_menu_logo"
             android:layout_width="10dp"
             android:layout_height="22dp"
             android:layout_weight="1"
@@ -62,7 +62,7 @@
             android:src="@drawable/pedulilansia" />
 
         <TextView
-            android:id="@+id/elder_menu_subMenu"
+            android:id="@+id/relative_menu_subMenu"
             android:layout_width="92dp"
             android:layout_height="28dp"
             android:layout_weight="1"
@@ -72,7 +72,7 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/elder_menu_menuIcon"
+            android:id="@+id/realtive_menu_menuIcon"
             android:layout_width="43dp"
             android:layout_height="43dp"
             android:layout_weight="0.0001"
@@ -83,7 +83,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/elder_relativePage_title_layout"
+        android:id="@+id/relative_elderPage_title_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -91,11 +91,11 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_menu_bar_layout"
+        app:layout_constraintTop_toBottomOf="@+id/relative_menu_bar_layout"
         app:layout_constraintVertical_bias="0.05">
 
         <TextView
-            android:id="@+id/elder_relativePage_title"
+            android:id="@+id/relative_elderPage_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
@@ -104,7 +104,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/elder_relativePage_title_sub"
+            android:id="@+id/relative_elderPage_title_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
@@ -114,38 +114,38 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/elder_relativePage_listRelative_layout"
+        android:id="@+id/relative_elderPage_listElder_layout"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingHorizontal="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/elder_relativePage_button_layout"
+        app:layout_constraintBottom_toTopOf="@+id/relative_elderPage_button_layout"
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_relativePage_title_layout"
+        app:layout_constraintTop_toBottomOf="@+id/relative_elderPage_title_layout"
         app:layout_constraintVertical_bias="0">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/elder_relativePage_listRelative"
+            android:id="@+id/relative_elderPage_listElder"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/elder_relativePage_qrcode"
+        android:id="@+id/relative_elderPage_qrcode"
         android:layout_width="280dp"
         android:layout_height="280dp"
         android:background="@drawable/qr_bg"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/elder_relativePage_button_layout"
+        app:layout_constraintBottom_toTopOf="@+id/relative_elderPage_button_layout"
         app:layout_constraintEnd_toStartOf="@+id/guidelineend"
         app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_relativePage_listRelative_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/relative_elderPage_listElder_layout" />
 
     <LinearLayout
-        android:id="@+id/elder_relativePage_button_layout"
+        android:id="@+id/relative_elderPage_button_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -153,11 +153,11 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/elder_relativePage_title_layout"
+        app:layout_constraintTop_toBottomOf="@+id/relative_elderPage_title_layout"
         app:layout_constraintVertical_bias="1">
 
         <TextView
-            android:id="@+id/elder_relativePage_button_add"
+            android:id="@+id/relative_elderPage_button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded"
