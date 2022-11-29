@@ -62,7 +62,7 @@
             android:src="@drawable/pedulilansia" />
 
         <TextView
-            android:id="@+id/kerabat_header"
+            android:id="@+id/elder_menu_subMenu"
             android:layout_width="92dp"
             android:layout_height="28dp"
             android:layout_weight="1"
@@ -83,7 +83,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/elder_relativePage_title_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -95,6 +95,7 @@
         app:layout_constraintVertical_bias="0.05">
 
         <TextView
+            android:id="@+id/elder_relativePage_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
@@ -103,6 +104,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/elder_relativePage_title_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
@@ -110,6 +112,37 @@
             android:textColor="@color/black_secondary"
             android:textSize="20sp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/elder_relativePage_listRelative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/relative_reminder_button_layout"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/elder_relativePage_title_layout"
+        app:layout_constraintVertical_bias="0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/elder_relativePage_listRelative"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/elder_relativePage_qrcode"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:background="@drawable/qr_bg"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/relative_reminder_button_layout"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@+id/elder_relativePage_listRelative_layout" />
 
     <LinearLayout
         android:id="@+id/relative_reminder_button_layout"
@@ -120,7 +153,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/elder_relativePage_title_layout"
         app:layout_constraintVertical_bias="1">
 
         <TextView
@@ -138,34 +171,4 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/guidelinebottom" />
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingHorizontal="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/relative_reminder_button_layout"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:background="@drawable/qr_bg"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/relative_reminder_button_layout"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

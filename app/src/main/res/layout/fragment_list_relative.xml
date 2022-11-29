@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listrelative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListRelativeFragment">
+
+    <LinearLayout
+        android:id="@+id/listrelative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/listrelative_userIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user_icon_focused"
+            android:layout_marginEnd="5dp"/>
+        <LinearLayout
+            android:id="@+id/listrelative_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/listrelative_text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Satria Pinandita Abyatarsyah"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="16sp"
+                android:textColor="@color/primary_green"/>
+            <TextView
+                android:id="@+id/listrelative_text_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:text="Anak"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="14sp"
+                android:textColor="@color/black_secondary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
