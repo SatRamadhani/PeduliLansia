@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "741528743473",
+    "project_id": "pedulilansia",
+    "storage_bucket": "pedulilansia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741528743473:android:5eca20b785651be36daf10",
+        "android_client_info": {
+          "package_name": "edu.upi.cs.mobileapp.techi.pedulilansia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741528743473-c4817rh93r1hua748na0vbrkditnskcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.upi.cs.mobileapp.techi.pedulilansia",
+            "certificate_hash": "b30363f85705564598750f503e243091b7d44baf"
+          }
+        },
+        {
+          "client_id": "741528743473-g6lhvr5sb2lqjqdk60uce872aer1rf7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxIxOp6vhw3v8fpSXGzIXoVwXsEGOfBPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741528743473-g6lhvr5sb2lqjqdk60uce872aer1rf7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
