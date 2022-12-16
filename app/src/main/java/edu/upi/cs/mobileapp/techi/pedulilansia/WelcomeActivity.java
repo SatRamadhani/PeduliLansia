@@ -38,8 +38,8 @@ public class WelcomeActivity extends AppCompatActivity
         }
 
         // Add WelcomeTopFragment.
-        transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.welcome, new GeneralWelcomeTopFragment()).commit();
+        // transaction = getSupportFragmentManager().beginTransaction();
+        // transaction.add(R.id.welcome, new GeneralWelcomeTopFragment()).commit();
 
         // Set content view and binding.
         binding = ActivityWelcomeBinding.inflate(getLayoutInflater());

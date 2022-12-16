@@ -23,7 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         // Initialize Firebase Messaging.
-        FirebaseApp.initializeApp(getApplicationContext());
+        /* FirebaseApp.initializeApp(getApplicationContext());
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>()
                 {
@@ -42,7 +42,7 @@ public class SplashScreenActivity extends AppCompatActivity
                         // Token : dxX5LDJ7S8ipY4GXirgj9c:APA91bGd9zKcQWFYUr0VRgPW5sdekrVqNKj53KP1msRkS2IIlzQw01qgm9LShhEzoilYSSdZeARD4PdFUw6nh5bxQgTJPehfcEyylvyS-ddQJeeZFkc-G8rmQu9IyLZuwsq7pV_vzZcp
                         Log.d("firebase", token);
                     }
-                });
+                }); */
 
         // Hide the bottom navigation bar.
         View view = getWindow().getDecorView();

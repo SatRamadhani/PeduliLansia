@@ -74,9 +74,6 @@
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.411" />
 
-    <!-- End of Bubble -->
-
-    <!-- Title -->
     <ImageView
         android:id="@+id/doublebubble"
         android:layout_width="99dp"
@@ -90,6 +87,9 @@
         app:layout_constraintTop_toBottomOf="@+id/relative_input_login_password"
         app:layout_constraintVertical_bias="0.676" />
 
+    <!-- End of Bubble -->
+
+    <!-- Title -->
     <TextView
         android:id="@+id/relative_txt_titleLogin"
         android:layout_width="wrap_content"

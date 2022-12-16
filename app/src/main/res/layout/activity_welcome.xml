@@ -1,114 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".WelcomeActivity">
 
-    <ImageButton
-        android:id="@+id/welcome_btn_elder"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/rounded"
-        android:backgroundTint="@color/primary_green"
-        android:contentDescription="@string/button_as_a"
-        android:elevation="2dp"
-        android:padding="100dp"
-        android:scaleType="center"
-        android:src="@drawable/buttonlansia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagline"
-        app:layout_constraintVertical_bias="0.880" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/optionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:letterSpacing="0.2"
-        android:text="@string/as_a"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/welcome_btn_elder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagline"
-        app:layout_constraintVertical_bias="0.966" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="344dp" />
 
-    <ImageButton
-        android:id="@+id/welcome_btn_relative"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/rounded"
-        android:backgroundTint="@color/secondary_green"
-        android:contentDescription="@string/button_as_a"
-        android:elevation="2dp"
-        android:padding="100dp"
-        android:scaleType="center"
-        android:src="@drawable/buttonkerabat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/welcome_btn_elder"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tagline"
-        app:layout_constraintVertical_bias="0.880" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="344dp" />
 
-    <TextView
-        android:id="@+id/tagline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:letterSpacing="0.2"
-        android:text="@string/tag_line"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5173962" />
 
-    <TextView
-        android:id="@+id/welcometext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:letterSpacing="0.05"
-        android:text="@string/welcome"
-        android:textColor="@color/primary_green"
-        android:textSize="26.5sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinebottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="30dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="344dp" />
+        <edu.upi.cs.mobileapp.techi.wave.MultiWaveHeader
+            android:id="@+id/multiWaveHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mwhCloseColor="@color/secondary_green"
+            app:mwhColorAlpha="0.8"
+            app:mwhEnableFullScreen="true"
+            app:mwhProgress="0.25"
+            app:mwhStartColor="@color/primary_green"
+            app:mwhWaves="MultiWave" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="344dp" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/pedulilansiawhite"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintBottom_toTopOf="@+id/title_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5173962" />
+        <LinearLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/welcometext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/welcome"
+                android:textColor="@color/primary_green"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/tag_line"
+                android:textSize="17sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_layout"
+            app:layout_constraintVertical_bias="0.966" >
+
+            <TextView
+                android:id="@+id/optionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins"
+                android:letterSpacing="0.2"
+                android:text="@string/as_a"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="50dp">
+
+                <ImageButton
+                    android:id="@+id/welcome_btn_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded"
+                    android:backgroundTint="@color/secondary_green"
+                    android:contentDescription="@string/button_as_a"
+                    android:padding="100dp"
+                    android:scaleType="center"
+                    android:src="@drawable/buttonkerabat"/>
+
+                <ImageButton
+                    android:id="@+id/welcome_btn_elder"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded"
+                    android:backgroundTint="@color/primary_green"
+                    android:contentDescription="@string/button_as_a"
+                    android:padding="100dp"
+                    android:scaleType="center"
+                    android:src="@drawable/buttonlansia"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

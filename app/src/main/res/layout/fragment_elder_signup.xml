@@ -1,194 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/eldersignup"
+    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ElderSignupFragment">
 
-    <!-- Guide Line -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinestart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="46dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="46dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinetop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25252524" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinebottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="46dp" />
-
-    <!-- End of Guide Line-->
-
-    <!-- Title -->
-    <TextView
-        android:id="@+id/elder_txt_titleSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:letterSpacing="0.05"
-        android:text="Data Diri"
-        android:textColor="@color/primary_green"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
-        app:layout_constraintEnd_toEndOf="@id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/guidelinestart"
-        app:layout_constraintTop_toTopOf="@+id/guidelinetop"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <!-- Input -->
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/elder_input_signup_nama"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/name_icon_custom"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Nama Lengkap"
-        android:inputType="textPersonName"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="12dp"
-        android:theme="@style/TextLabel"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinebottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_txt_titleSignup"
-        app:layout_constraintVertical_bias="0.044" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/elder_input_signup_gender"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_input"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="12dp"
-        android:theme="@style/TextLabel"
-        app:hintTextColor="@color/primary_green"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinebottom"
-        app:layout_constraintEnd_toEndOf="@id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_input_signup_nama"
-        app:layout_constraintVertical_bias="0.027">
-
-        <RadioGroup
-            android:id="@+id/elder_input_signup_radiogroup"
+        <!-- Guide Line -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinestart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="25dp" />
 
-            <ImageView
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinetop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinebottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="25dp" />
+
+        <!-- End of Guide Line-->
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="126dp"
+            android:layout_height="22dp"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/pedulilansia"
+            app:layout_constraintBottom_toTopOf="@+id/input_layout"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- Bubble -->
+
+        <ImageView
+            android:id="@+id/triplebubble"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/triplebubble"
+            app:layout_constraintBottom_toTopOf="@+id/input_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.987"
+            app:layout_constraintStart_toStartOf="@+id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            app:layout_constraintVertical_bias="0.411" />
+
+        <ImageView
+            android:id="@+id/doublebubble"
+            android:layout_width="99dp"
+            android:layout_height="141dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/doublebubble"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout"
+            app:layout_constraintVertical_bias="0.676" />
+
+        <!-- End of Bubble -->
+
+        <!-- Input -->
+
+        <LinearLayout
+            android:id="@+id/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toTopOf="@+id/guidelinetop"
+            app:layout_constraintVertical_bias="0.5" >
+
+            <TextView
+                android:id="@+id/elder_txt_titleSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/gender_icon" />
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:letterSpacing="0.05"
+                android:text="Data Diri"
+                android:textColor="@color/primary_green"
+                android:textSize="34sp"/>
 
-            <RadioButton
-                android:id="@+id/maleRadio"
-                android:layout_width="120dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/grey"
-                android:fontFamily="@font/poppins"
-                android:text="Laki-laki"
-                android:textSize="15sp"
-                tools:ignore="TouchTargetSizeCheck"/>
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <RadioButton
-                android:id="@+id/femaleRadio"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/grey"
-                android:fontFamily="@font/poppins"
-                android:text="Perempuan"
-                android:textSize="15sp"
-                tools:ignore="TouchTargetSizeCheck"/>
-        </RadioGroup>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/elder_input_signup_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/name_icon_custom"
+                    android:drawablePadding="12dp"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Nama Lengkap"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    android:theme="@style/TextLabel"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/elder_input_signup_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/custom_input"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    android:theme="@style/TextLabel"
+                    app:hintTextColor="@color/primary_green">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/elder_input_signup_birthdate"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/date_icon_custom"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Tanggal Ulang Tahun"
-        android:inputType="date"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="12dp"
-        android:text="dd/mm/yyyy"
-        android:textSize="16sp"
-        android:theme="@style/TextLabel"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinebottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_input_signup_gender"
-        app:layout_constraintVertical_bias="0.027" />
+                    <RadioGroup
+                        android:id="@+id/elder_input_signup_radiogroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/elder_btn_signup"
-        android:layout_width="127dp"
-        android:layout_height="56dp"
-        android:background="@drawable/rounded50"
-        android:backgroundTint="@color/primary_green"
-        android:drawableEnd="@drawable/arrow_circle_right_icon"
-        android:elevation="10dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:letterSpacing="0.05"
-        android:paddingHorizontal="20sp"
-        android:text="Selesai"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinebottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineend"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_input_signup_birthdate"
-        app:layout_constraintVertical_bias="0.109" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/gender_icon" />
 
-    <!-- Tag Line-->
-    <TextView
-        android:id="@+id/elder_txt_tagline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
-        android:letterSpacing="0.1"
-        android:text="Solusi Masa Senja Anda"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
-        app:layout_constraintEnd_toEndOf="@id/guidelineend"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@id/guidelinestart"
-        app:layout_constraintTop_toBottomOf="@+id/elder_btn_signup"
-        app:layout_constraintVertical_bias="1.0" />
+                        <RadioButton
+                            android:id="@+id/maleRadio"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:text="Laki-laki"
+                            android:textSize="15sp"
+                            tools:ignore="TouchTargetSizeCheck"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <RadioButton
+                            android:id="@+id/femaleRadio"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/grey"
+                            android:fontFamily="@font/poppins"
+                            android:text="Perempuan"
+                            android:textSize="15sp"
+                            tools:ignore="TouchTargetSizeCheck"/>
+                    </RadioGroup>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/elder_input_signup_birthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/date_icon_custom"
+                    android:drawablePadding="12dp"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Tanggal Ulang Tahun"
+                    android:inputType="date"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    android:text="dd/mm/yyyy"
+                    android:textSize="16sp"
+                    android:theme="@style/TextLabel"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/elder_btn_signup"
+                android:layout_width="127dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                android:background="@drawable/rounded50"
+                android:backgroundTint="@color/primary_green"
+                android:drawableEnd="@drawable/arrow_circle_right_icon"
+                android:elevation="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:letterSpacing="0.05"
+                android:paddingHorizontal="20sp"
+                android:text="Selesai"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- Tag Line-->
+        <TextView
+            android:id="@+id/elder_txt_tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.1"
+            android:text="Solusi Masa Senja Anda"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelinebottom"
+            app:layout_constraintEnd_toEndOf="@id/guidelineend"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@id/guidelinestart"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

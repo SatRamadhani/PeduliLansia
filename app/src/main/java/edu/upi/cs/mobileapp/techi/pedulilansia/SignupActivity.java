@@ -31,8 +31,7 @@ public class SignupActivity extends AppCompatActivity
         if(signup == 1)
         {
             // Sign-up as Elder.
-            transaction.add(R.id.signup, new GeneralWelcomeTopFragment())
-                    .add(R.id.signup, new ElderSignupFragment());
+            transaction.add(R.id.signup, new ElderSignupFragment());
         }
         else if(signup == 2)
         {
